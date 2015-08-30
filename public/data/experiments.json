@@ -1,0 +1,29 @@
+[{
+  "experiment_name": "Increased registrations",
+  "assumption_has_exception": false,
+  "baseline": "Get the current count of registrations",
+  "success": "Action when successful",
+  "failure": "Action when failure",
+  "assumption_has_definition": true,
+  "baseline_has_definition": true,
+  "assumption_execution": "",
+  "assumption": "The amount of registrations is increased with 50",
+  "baseline_has_exception": false,
+  "time": "In one week",
+  "time_has_definition": true,
+  "baseline_execution": "23"
+}, {
+  "experiment_name": "Increased registrations",
+  "assumption_has_exception": false,
+  "baseline": "Get the current count of registrations",
+  "success": "",
+  "failure": "Action when failure",
+  "assumption_has_definition": false,
+  "baseline_has_definition": true,
+  "assumption_execution": "",
+  "assumption": "The amount of registrations is increased with 200",
+  "baseline_has_exception": true,
+  "time": "In one month",
+  "time_has_definition": false,
+  "baseline_execution": ""
+}]

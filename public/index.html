@@ -1,0 +1,87 @@
+<!doctype html>
+<html class="no-js" lang="" ng-app="experimentApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Experiment Dashboard</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="config.js"></script>
+    <script src="js/experiments.js"></script>
+</head>
+<body>
+
+<img src="images/logo.png" alt="Gareth logo" id="logo"/>
+
+<h1>Experiment Dashboard</h1>
+
+
+<div class="container">
+    <div class="row" ng-controller="ExperimentController as experimentController">
+        <h2>Running experiments</h2>
+
+        <p>List of experiments</p>
+
+        <div ng-repeat="experiment in experiments">
+            <h3>Experiment: {{experiment.experiment_name}}</h3>
+            <table class="table">
+
+                <thead>
+                <tr>
+                    <th colspan="2"></th>
+                    <th>Execution date/time</th>
+                    <th>Execution status</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                <tr ng-class="{red: experiment.baseline_has_exception, gray: !experiment.baseline_has_definition, yellow: experiment.baseline_execution.length <= 0 , green: (experiment.baseline_execution.length > 0)}">
+                    <th>Baseline</th>
+                    <td>{{experiment.baseline}}</td>
+                    <td>{{experiment.baseline_execution}}</td>
+                    <td>Fail/Pass</td>
+                </tr>
+
+                <tr ng-class="{red: experiment.baseline_has_exception, gray: !experiment.assumption_has_definition, yellow: experiment.assumption_execution.length <= 0, green: experiment.assumption_execution.length > 0}">
+                    <th>Assumption</th>
+                    <td>{{experiment.assumption}}</td>
+                    <td>{{experiment.assumption_execution}}</td>
+                    <td>Fail/Pass</td>
+                </tr>
+
+                <tr ng-class="{gray: !experiment.time_has_definition}">
+                    <th>Time</th>
+                    <td colspan="3">{{experiment.time}}</td>
+                </tr>
+
+                <tr>
+                    <th>Success</th>
+                    <td colspan="3">{{experiment.success}}</td>
+                </tr>
+
+                <tr>
+                    <th>Failure</th>
+                    <td colspan="3">{{experiment.failure}}</td>
+                </tr>
+
+                </tbody>
+
+
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

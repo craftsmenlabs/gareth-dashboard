@@ -1,0 +1,22 @@
+{
+  "name": "experiment-dashboard",
+  "version": "0.1.0",
+  "author": "Hylke Stapersma",
+  "description": "Dashboard for viewing the experiment dashboard",
+  "main": "server.js",
+  "engines": {
+    "iojs": ">= 1.0.3"
+  },
+  "dependencies": {
+    "express": ">=4.0.0"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+  },
+  "repository": "",
+  "keywords": [
+    "webserver",
+    "dashboard"
+  ]
+}

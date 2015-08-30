@@ -1,0 +1,27 @@
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+img#logo {
+    width: 30%;
+}
+
+tr.red {
+    background-color: #ee8074;
+}
+
+tr.green {
+    background-color: #a1ee9c;
+}
+
+tr.yellow {
+    background-color: #eeeb8d;
+}
+
+tr.gray {
+    background-color: #c6c6c6;
+}
+
+.hidden {
+    display: none;
+}
