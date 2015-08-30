@@ -1,87 +1,214 @@
 <!doctype html>
 <html class="no-js" lang="" ng-app="experimentApp">
+<html lang="en">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Experiment Dashboard</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<title>Gareth</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+<meta content="" name="description"/>
+<meta content="" name="author"/>
+<!-- BEGIN GLOBAL MANDATORY STYLES -->
+<!-- Latest compiled and minified CSS -->
+<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/main.css">
 
-    <!-- Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
-    <script src="config.js"></script>
-    <script src="js/experiments.js"></script>
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- END GLOBAL MANDATORY STYLES -->
+
+<link rel="shortcut icon" href="images/icons/favicon.ico"/>
+
+<!-- Angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+<script src="config.js"></script>
+<script src="js/experiments.js"></script>
 </head>
+
 <body>
+<!--HEADER-->
+  <div class="container">
+    <div class="row">
 
-<img src="images/logo.png" alt="Gareth logo" id="logo"/>
-
-<h1>Experiment Dashboard</h1>
-
-
-<div class="container">
-    <div class="row" ng-controller="ExperimentController as experimentController">
-        <h2>Running experiments</h2>
-
-        <p>List of experiments</p>
-
-        <div ng-repeat="experiment in experiments">
-            <h3>Experiment: {{experiment.experiment_name}}</h3>
-            <table class="table">
-
-                <thead>
-                <tr>
-                    <th colspan="2"></th>
-                    <th>Execution date/time</th>
-                    <th>Execution status</th>
-                </tr>
-                </thead>
-
-                <tbody>
-
-                <tr ng-class="{red: experiment.baseline_has_exception, gray: !experiment.baseline_has_definition, yellow: experiment.baseline_execution.length <= 0 , green: (experiment.baseline_execution.length > 0)}">
-                    <th>Baseline</th>
-                    <td>{{experiment.baseline}}</td>
-                    <td>{{experiment.baseline_execution}}</td>
-                    <td>Fail/Pass</td>
-                </tr>
-
-                <tr ng-class="{red: experiment.baseline_has_exception, gray: !experiment.assumption_has_definition, yellow: experiment.assumption_execution.length <= 0, green: experiment.assumption_execution.length > 0}">
-                    <th>Assumption</th>
-                    <td>{{experiment.assumption}}</td>
-                    <td>{{experiment.assumption_execution}}</td>
-                    <td>Fail/Pass</td>
-                </tr>
-
-                <tr ng-class="{gray: !experiment.time_has_definition}">
-                    <th>Time</th>
-                    <td colspan="3">{{experiment.time}}</td>
-                </tr>
-
-                <tr>
-                    <th>Success</th>
-                    <td colspan="3">{{experiment.success}}</td>
-                </tr>
-
-                <tr>
-                    <th>Failure</th>
-                    <td colspan="3">{{experiment.failure}}</td>
-                </tr>
-
-                </tbody>
-
-
-            </table>
-        </div>
+            <img src="images/logo.png" alt="Gareth logo" id="logo"/>
+      <hr>
     </div>
+  </div>
+<!--END HEADER-->
+
+<!-- BEGIN CIRCLE GRAPHS-->
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Make a nice header called: Stattistics</h3>
+
+
+              <div class="tools">
+                <a href="javascript:;" class="collapse">
+                </a>
+              </div>
+            </div>
+
+
+              <div class="row">
+                <div class="col-md-4">
+                  <img src="images/placeholders/c7Vva.png"/>
+                  <h4>15 experiments running</h4>
+                </div>
+                <div class="col-md-4">
+                  <img src="images/placeholders/c7Vva.png" align="center"/>
+                  <h4>Baselines failing</h4>
+                </div>
+                <div class="col-md-4">
+                  <img src="images/placeholders/c7Vva.png"/>
+                  <h4>Assumption exeptions</h4>
+                </div>
+              </div>
+
+      </div>
+      <!-- END PAGE CONTENT-->
+    </div>
+    <!-- BEGIN CONTENT -->
+    </div>
+
+  </div>
+<!-- END CIRCLE GRAPHS-->
+    <hr>
+
+<!-- BEGIN THE TABLE-->
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-12">
+          <h3>Make a nice header: running experiments</h3>
+
+              <div class="tools">
+                <a href="javascript:;" class="collapse">
+                </a>
+              </div>
+            </div>
+
+              <div class="row">
+                 <div class="col-md-12" ng-controller="ExperimentController as experimentController">
+                    <div class="bg-white">
+                        <div ng-app id="ng-app">
+                          <div ng-repeat="experiment in experiments">
+
+                            <div class="panel-heading">
+                              <a href="" class="collapsed" ng-click="collapsed=!collapsed">
+                                <h1 class="panel-title">Experiment: {{experiment.experiment_name}}</h1></a>
+                            </div>
+
+                                <p class="text-right">
+                                  Icons
+                                </p>
+
+                            <div ng-show="collapsed">
+                              <table class="table">
+
+                                <thead>
+                                  <tr>
+                                      <th colspan="2"></th>
+                                      <th>Execution date/time</th>
+                                      <th>Execution status</th>
+                                  </tr>
+                                  </thead>
+
+                                  <tbody>
+
+                                  <tr ng-class="{red: experiment.baseline_has_exception, gray: !experiment.baseline_has_definition, yellow: experiment.baseline_execution.length <= 0 , green: (experiment.baseline_execution.length > 0)}">
+                                      <th>Baseline</th>
+                                      <td>{{experiment.baseline}}</td>
+                                      <td>{{experiment.baseline_execution}}</td>
+                                      <td>Fail/Pass</td>
+                                  </tr>
+
+                                  <tr ng-class="{red: experiment.baseline_has_exception, gray: !experiment.assumption_has_definition, yellow: experiment.assumption_execution.length <= 0, green: experiment.assumption_execution.length > 0}">
+                                      <th>Assumption</th>
+                                      <td>{{experiment.assumption}}</td>
+                                      <td>{{experiment.assumption_execution}}</td>
+                                      <td>Fail/Pass</td>
+                                  </tr>
+
+                                  <tr ng-class="{gray: !experiment.time_has_definition}">
+                                      <th>Time</th>
+                                      <td colspan="3">{{experiment.time}}</td>
+                                  </tr>
+
+                                  <tr>
+                                      <th>Success</th>
+                                      <td colspan="3">{{experiment.success}}</td>
+                                  </tr>
+
+                                  <tr>
+                                      <th>Failure</th>
+                                      <td colspan="3">{{experiment.failure}}</td>
+                                  </tr>
+
+                                  </tbody>
+
+                              </table>
+                            <hr>
+                          </table>
+                        </div>
+                      </div>
+                     </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!-- END PAGE CONTENT-->
+    </div>
+    <!-- BEGIN CONTENT -->
+    </div>
+
+    </div>
+<!-- END THE TABLE-->
+
+
+<!-- BEGIN FOOTER -->
+<div class="page-footer">
+  <div class="row">
+  	<div class="container">
+  		 <img src="images/logo.png" alt="Gareth logo" id="logo"/>
+  	</div>
+  </div>
+  <div class="container">
+  <ul>
+    <li class="horizontal" data-type="github">
+    </li>
+    <li class="horizontal">
+      <a href="https://github.com/craftsmenlabs/gareth-poc">GitHub</a>
+    </li>
+    <li class="horizontal" data-type="twitter">
+    </li>
+    <li class="horizontal">
+      <a href="https://twitter.com/hylke1982">hylke1982</a>
+    </li>
+    <li class="horizontal" data-type="twitter">
+    </li>
+    <li class="horizontal">
+      <a href="https://twitter.com/NielsTalens">NielsTalens</a>
+    </li>
+  </ul>
 </div>
+</div>
+<div class="scroll-to-top">
+	<i class="icon-arrow-up"></i>
+</div>
+<!-- END FOOTER -->
+
 
 </body>
+<!-- END BODY -->
 </html>
