@@ -49,15 +49,10 @@
 
       <div class="row">
         <div class="col-md-12">
-          <h3>Make a nice header called: Stattistics</h3>
-
-
-              <div class="tools">
-                <a href="javascript:;" class="collapse">
-                </a>
-              </div>
-            </div>
-
+          <div class="h3">
+            <span class="glyphicon glyphicon-stats"></span>
+              Statistics
+          </div>
 
               <div class="row">
                 <div class="col-md-4">
@@ -89,7 +84,10 @@
 
       <div class="row">
         <div class="col-md-12">
-          <h3>Make a nice header: running experiments</h3>
+          <div class="h3">
+            <span class="glyphicon glyphicon-refresh"></span>
+              Running experiments
+          </div>
 
               <div class="tools">
                 <a href="javascript:;" class="collapse">
@@ -105,12 +103,8 @@
 
                             <div class="panel-heading">
                               <a href="" class="collapsed" ng-click="collapsed=!collapsed">
-                                <h1 class="panel-title">Experiment: {{experiment.experiment_name}}</h1></a>
+                                <h3>Experiment: {{experiment.experiment_name}}</h3></a>
                             </div>
-
-                                <p class="text-right">
-                                  Icons
-                                </p>
 
                             <div ng-show="collapsed">
                               <table class="table">
@@ -175,39 +169,38 @@
     </div>
 <!-- END THE TABLE-->
 
-
+<hr>
 <!-- BEGIN FOOTER -->
-<div class="page-footer">
-  <div class="row">
-  	<div class="container">
-  		 <img src="images/logo.png" alt="Gareth logo" id="logo"/>
-  	</div>
-  </div>
-  <div class="container">
-  <ul>
-    <li class="horizontal" data-type="github">
-    </li>
-    <li class="horizontal">
-      <a href="https://github.com/craftsmenlabs/gareth-poc">GitHub</a>
-    </li>
-    <li class="horizontal" data-type="twitter">
-    </li>
-    <li class="horizontal">
-      <a href="https://twitter.com/hylke1982">hylke1982</a>
-    </li>
-    <li class="horizontal" data-type="twitter">
-    </li>
-    <li class="horizontal">
-      <a href="https://twitter.com/NielsTalens">NielsTalens</a>
-    </li>
-  </ul>
-</div>
-</div>
-<div class="scroll-to-top">
-	<i class="icon-arrow-up"></i>
-</div>
-<!-- END FOOTER -->
+<footer class="wrap">
 
+        <div class="row">
+          <div class="col-md-12">
+            <div class="footer-image-right">
+              <ul>
+                <li class="horizontal" data-type="github">
+                </li>
+                <li class="horizontal">
+                  <a href="https://github.com/craftsmenlabs/gareth-poc">GitHub</a>
+                </li>
+                <li class="horizontal" data-type="twitter">
+                </li>
+                <li class="horizontal">
+                  <a href="https://twitter.com/hylke1982">hylke1982</a>
+                </li>
+                <li class="horizontal" data-type="twitter">
+                </li>
+                <li class="horizontal">
+                  <a href="https://twitter.com/NielsTalens">NielsTalens</a>
+                </li>
+              </ul>
+
+            </div>
+            <div class="lean-part">
+                <img src="images/logo.png" class="footer-image" alt="Gareth Logo"/>
+            </div>
+          </div>
+        </div>  
+</footer>
 
 </body>
 <!-- END BODY -->
