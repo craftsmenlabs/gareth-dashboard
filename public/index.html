@@ -57,15 +57,15 @@
               <div class="row">
                 <div class="col-md-4">
                   <img src="images/placeholders/c7Vva.png"/>
-                  <h4>15 experiments running</h4>
+                  <h4>Running experiments</h4>
                 </div>
                 <div class="col-md-4">
                   <img src="images/placeholders/c7Vva.png" align="center"/>
-                  <h4>Baselines failing</h4>
+                  <h4>Failing baselines</h4>
                 </div>
                 <div class="col-md-4">
                   <img src="images/placeholders/c7Vva.png"/>
-                  <h4>Assumption exeptions</h4>
+                  <h4>Failing assumptions</h4>
                 </div>
               </div>
 
@@ -102,8 +102,18 @@
                           <div ng-repeat="experiment in experiments">
 
                             <div class="panel-heading">
-                              <a href="" class="collapsed" ng-click="collapsed=!collapsed">
-                                <h3>Experiment: {{experiment.experiment_name}}</h3></a>
+                              <table class="table-condensed">
+
+                                <thead>
+                                  <tr>
+                                      <th><a href="" class="collapsed" ng-click="collapsed=!collapsed"><h3>Experiment: {{experiment.experiment_name}}</h3></a></th>
+                                      <th><h3><p ng-class="{red: experiment.baseline_has_exception, gray: !experiment.assumption_has_definition, yellow: experiment.assumption_execution.length <= 0, green: experiment.assumption_execution.length > 0}">Assumption</p></h3></th>
+                                      <th><h3><p ng-class="{red: experiment.baseline_has_exception, gray: !experiment.baseline_has_definition, yellow: experiment.baseline_execution.length <= 0 , green: (experiment.baseline_execution.length > 0)}">Baseline</p></h3></th>
+                                  </tr>
+                                  </thead>
+                              </table>
+
+
                             </div>
 
                             <div ng-show="collapsed">
@@ -123,7 +133,7 @@
                                       <th>Baseline</th>
                                       <td>{{experiment.baseline}}</td>
                                       <td>{{experiment.baseline_execution}}</td>
-                                      <td>Fail/Pass</td>
+                                      <td><p ng-class="{red: experiment.baseline_has_exception, gray: !experiment.baseline_has_definition, yellow: experiment.baseline_execution.length <= 0 , green: (experiment.baseline_execution.length > 0)}">Status</p></td>
                                   </tr>
 
                                   <tr ng-class="{red: experiment.baseline_has_exception, gray: !experiment.assumption_has_definition, yellow: experiment.assumption_execution.length <= 0, green: experiment.assumption_execution.length > 0}">
@@ -199,7 +209,7 @@
                 <img src="images/logo.png" class="footer-image" alt="Gareth Logo"/>
             </div>
           </div>
-        </div>  
+        </div>
 </footer>
 
 </body>

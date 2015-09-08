@@ -31,9 +31,8 @@ h4 {
 }
 
 h5 {
-    text-align: right;
-    font-size: 1.4rem;
-    color: #dc1414;
+    text-align: center;
+    font-size: 8em;
 }
 
 h6 {
@@ -110,6 +109,23 @@ div.container {
 .container.drop-shadow {
     padding-left:0;
     padding-right:0;
+}
+
+<!-- Trying to get the text colored according to the experiment status-->
+p.red {
+    color: #ee8074;
+}
+
+p.green {
+    color: #008000;
+}
+
+p.yellow {
+    color: #FFA500;
+}
+
+p.gray {
+    color: #c6c6c6;
 }
 
 tr.red {
