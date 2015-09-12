@@ -5,211 +5,186 @@
 <!-- BEGIN HEAD -->
 <head>
 
-<title>Gareth</title>
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-<meta content="" name="description"/>
-<meta content="" name="author"/>
-<!-- BEGIN GLOBAL MANDATORY STYLES -->
-<!-- Latest compiled and minified CSS -->
-<link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
+    <title>Gareth</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <!-- Latest compiled and minified CSS -->
+    <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-<link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<!-- END GLOBAL MANDATORY STYLES -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- END GLOBAL MANDATORY STYLES -->
 
-<link rel="shortcut icon" href="images/icons/favicon.ico"/>
+    <link rel="shortcut icon" href="images/icons/favicon.ico"/>
 
-<!-- Angular -->
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
-<script src="config.js"></script>
-<script src="js/experiments.js"></script>
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="config.js"></script>
+    <script src="js/experiments.js"></script>
 </head>
 
 <body>
 <!--HEADER-->
-  <div class="container">
+<div class="container">
     <div class="row">
 
-            <img src="images/logo.png" alt="Gareth logo" id="logo"/>
-      <hr>
+        <img src="images/logo.png" alt="Gareth logo" id="logo"/>
+        <hr>
     </div>
-  </div>
+</div>
 <!--END HEADER-->
 
 <!-- BEGIN CIRCLE GRAPHS-->
-    <div class="container">
+<div class="container">
 
-      <div class="row">
+    <div class="row">
         <div class="col-md-12">
-          <div class="h3">
-            <span class="glyphicon glyphicon-stats"></span>
-              Statistics
-          </div>
-
-              <div class="row">
-                <div class="col-md-4">
-                  <img src="images/placeholders/c7Vva.png"/>
-                  <h4>Running experiments</h4>
-                </div>
-                <div class="col-md-4">
-                  <img src="images/placeholders/c7Vva.png" align="center"/>
-                  <h4>Failing baselines</h4>
-                </div>
-                <div class="col-md-4">
-                  <img src="images/placeholders/c7Vva.png"/>
-                  <h4>Failing assumptions</h4>
-                </div>
-              </div>
-
-      </div>
-      <!-- END PAGE CONTENT-->
-    </div>
-    <!-- BEGIN CONTENT -->
-    </div>
-
-  </div>
-<!-- END CIRCLE GRAPHS-->
-    <hr>
-
-<!-- BEGIN THE TABLE-->
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="h3">
-            <span class="glyphicon glyphicon-refresh"></span>
-              Running experiments
-          </div>
-
-              <div class="tools">
-                <a href="javascript:;" class="collapse">
-                </a>
-              </div>
+            <div class="h3">
+                <span class="glyphicon glyphicon-stats"></span>
+                Statistics
             </div>
 
-              <div class="row">
-                 <div class="col-md-12" ng-controller="ExperimentController as experimentController">
-                    <div class="bg-white">
-                        <div ng-app id="ng-app">
-                          <div ng-repeat="experiment in experiments">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="images/placeholders/c7Vva.png"/>
+                    <h4>Running experiments</h4>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/placeholders/c7Vva.png" align="center"/>
+                    <h4>Failing baselines</h4>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/placeholders/c7Vva.png"/>
+                    <h4>Failing assumptions</h4>
+                </div>
+            </div>
+
+        </div>
+        <!-- END PAGE CONTENT-->
+    </div>
+    <!-- BEGIN CONTENT -->
+</div>
+
+</div>
+<!-- END CIRCLE GRAPHS-->
+<hr>
+
+<!-- BEGIN THE TABLE-->
+<div class="container">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="h3">
+                <span class="glyphicon glyphicon-refresh"></span>
+                Running experiments
+            </div>
+
+            <div class="tools">
+                <a href="javascript:;" class="collapse">
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" ng-controller="ExperimentController as experimentController">
+                <div class="bg-white">
+                    <div ng-app id="ng-app">
+                        <div ng-repeat="experiment in experiments">
 
                             <div class="panel-heading">
-                              <table class="table-condensed">
+                                <table class="table-condensed experiments">
 
-                                <thead>
-                                  <tr>
-                                      <th><a href="" class="collapsed" ng-click="collapsed=!collapsed"><h3>Experiment: {{experiment.experiment_name}}</h3></a></th>
-                                      <th><h3><p ng-class="{red: experiment.baseline_has_exception, gray: !experiment.assumption_has_definition, yellow: experiment.assumption_execution.length <= 0, green: experiment.assumption_execution.length > 0}">Assumption</p></h3></th>
-                                      <th><h3><p ng-class="{red: experiment.baseline_has_exception, gray: !experiment.baseline_has_definition, yellow: experiment.baseline_execution.length <= 0 , green: (experiment.baseline_execution.length > 0)}">Baseline</p></h3></th>
-                                  </tr>
-                                  </thead>
-                              </table>
+                                    <thead>
+                                    <tr>
+                                        <th colspan="3"><a href="" class="collapsed" ng-click="collapsed=!collapsed"><h3>Experiment:
+                                            {{experiment.experiment_name}}</h3></a></th>
+                                    </tr>
+                                    </thead>
+                                    <tr class="{{experiment.baseline_state}}">
+                                        <th>Baseline</th>
+                                        <td>{{experiment.baseline_glueline}}</td>
+                                        <td>{{experiment.baseline_execution}}</td>
+                                    </tr>
+                                    <tr class="{{experiment.assume_state}}">
+                                        <th>Assume</th>
+                                        <td>{{experiment.assume_glueline}}</td>
+                                        <td>{{experiment.assume_execution}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Time</th>
+                                        <td colspan="2">{{experiment.time_glueline}}</td>
+                                    </tr>
+                                    <tr class="{{experiment.success_state}}">
+                                        <th>Success</th>
+                                        <td>{{experiment.success_glueline}}</td>
+                                        <td>{{experiment.success_execution}}</td>
+                                    </tr>
+                                    <tr class="{{experiment.failure_state}}">
+                                        <th>Failure</th>
+                                        <td>{{experiment.failure_glueline}}</td>
+                                        <td>{{experiment.failure_execution}}</td>
+                                    </tr>
+                                </table>
 
 
                             </div>
 
-                            <div ng-show="collapsed">
-                              <table class="table">
-
-                                <thead>
-                                  <tr>
-                                      <th colspan="2"></th>
-                                      <th>Execution date/time</th>
-                                      <th>Execution status</th>
-                                  </tr>
-                                  </thead>
-
-                                  <tbody>
-
-                                  <tr ng-class="{red: experiment.baseline_has_exception, gray: !experiment.baseline_has_definition, yellow: experiment.baseline_execution.length <= 0 , green: (experiment.baseline_execution.length > 0)}">
-                                      <th>Baseline</th>
-                                      <td>{{experiment.baseline}}</td>
-                                      <td>{{experiment.baseline_execution}}</td>
-                                      <td><p ng-class="{red: experiment.baseline_has_exception, gray: !experiment.baseline_has_definition, yellow: experiment.baseline_execution.length <= 0 , green: (experiment.baseline_execution.length > 0)}">Status</p></td>
-                                  </tr>
-
-                                  <tr ng-class="{red: experiment.baseline_has_exception, gray: !experiment.assumption_has_definition, yellow: experiment.assumption_execution.length <= 0, green: experiment.assumption_execution.length > 0}">
-                                      <th>Assumption</th>
-                                      <td>{{experiment.assumption}}</td>
-                                      <td>{{experiment.assumption_execution}}</td>
-                                      <td>Fail/Pass</td>
-                                  </tr>
-
-                                  <tr ng-class="{gray: !experiment.time_has_definition}">
-                                      <th>Time</th>
-                                      <td colspan="3">{{experiment.time}}</td>
-                                  </tr>
-
-                                  <tr>
-                                      <th>Success</th>
-                                      <td colspan="3">{{experiment.success}}</td>
-                                  </tr>
-
-                                  <tr>
-                                      <th>Failure</th>
-                                      <td colspan="3">{{experiment.failure}}</td>
-                                  </tr>
-
-                                  </tbody>
-
-                              </table>
-                            <hr>
-                          </table>
                         </div>
-                      </div>
-                     </div>
-                  </div>
-              </div>
-          </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <!-- END PAGE CONTENT-->
     </div>
-    <!-- BEGIN CONTENT -->
-    </div>
+</div>
+<!-- END PAGE CONTENT-->
+</div>
+<!-- BEGIN CONTENT -->
+</div>
 
-    </div>
+</div>
 <!-- END THE TABLE-->
 
 <hr>
 <!-- BEGIN FOOTER -->
 <footer class="wrap">
 
-        <div class="row">
-          <div class="col-md-12">
+    <div class="row">
+        <div class="col-md-12">
             <div class="footer-image-right">
-              <ul>
-                <li class="horizontal" data-type="github">
-                </li>
-                <li class="horizontal">
-                  <a href="https://github.com/craftsmenlabs/gareth-poc">GitHub</a>
-                </li>
-                <li class="horizontal" data-type="twitter">
-                </li>
-                <li class="horizontal">
-                  <a href="https://twitter.com/hylke1982">hylke1982</a>
-                </li>
-                <li class="horizontal" data-type="twitter">
-                </li>
-                <li class="horizontal">
-                  <a href="https://twitter.com/NielsTalens">NielsTalens</a>
-                </li>
-              </ul>
+                <ul>
+                    <li class="horizontal" data-type="github">
+                    </li>
+                    <li class="horizontal">
+                        <a href="https://github.com/craftsmenlabs/gareth-poc">GitHub</a>
+                    </li>
+                    <li class="horizontal" data-type="twitter">
+                    </li>
+                    <li class="horizontal">
+                        <a href="https://twitter.com/hylke1982">hylke1982</a>
+                    </li>
+                    <li class="horizontal" data-type="twitter">
+                    </li>
+                    <li class="horizontal">
+                        <a href="https://twitter.com/NielsTalens">NielsTalens</a>
+                    </li>
+                </ul>
 
             </div>
             <div class="lean-part">
                 <img src="images/logo.png" class="footer-image" alt="Gareth Logo"/>
             </div>
-          </div>
         </div>
+    </div>
 </footer>
 
 </body>

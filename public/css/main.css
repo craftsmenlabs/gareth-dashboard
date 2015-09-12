@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     padding: 0;
     border-top: 1px solid rgba(232, 229, 224, 0.1);
@@ -16,13 +16,13 @@ h1 {
 }
 
 h2 {
-  font-size: 1.6em;
-  line-height: 2em;
-  color: #dc1414;
+    font-size: 1.6em;
+    line-height: 2em;
+    color: #dc1414;
 }
 
 h3 {
-  font-size: 1.4em;
+    font-size: 1.4em;
 }
 
 h4 {
@@ -47,6 +47,7 @@ p.subtitle {
     font-weight: 300;
     font-size: 1.2em;
 }
+
 strong {
     font-weight: 500;
     color: #dc1414;
@@ -56,19 +57,19 @@ strong {
     display: none;
 }
 
-li.horizontal{
+li.horizontal {
     display: inline;
     list-style-type: none;
     padding-right: 20px;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
 }
 
-li.horizontal[data-type="github"]{
- background-image:url("../images/link-icons/github-icon.png");
+li.horizontal[data-type="github"] {
+    background-image: url("../images/link-icons/github-icon.png");
 }
 
- li.horizontal[data-type="twitter"]{
-  background-image:url("../images/link-icons/twitter-icon.png");
+li.horizontal[data-type="twitter"] {
+    background-image: url("../images/link-icons/twitter-icon.png");
 }
 
 div {
@@ -104,14 +105,16 @@ div.container {
 .drop-shadow {
     -webkit-box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, .5);
-    border-radius:5px;
-}
-.container.drop-shadow {
-    padding-left:0;
-    padding-right:0;
+    border-radius: 5px;
 }
 
-<!-- Trying to get the text colored according to the experiment status-->
+.container.drop-shadow {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+<!--
+Trying to get the text colored according to the experiment status-- >
 p.red {
     color: #ee8074;
 }
@@ -128,19 +131,23 @@ p.gray {
     color: #c6c6c6;
 }
 
-tr.red {
+tr.error {
     background-color: #ee8074;
 }
 
-tr.green {
+tr.open {
+    background-color: #eecd09;
+}
+
+tr.finished {
     background-color: #a1ee9c;
 }
 
-tr.yellow {
+tr.running {
     background-color: #eeeb8d;
 }
 
-tr.gray {
+tr.non_existent {
     background-color: #c6c6c6;
 }
 
@@ -152,6 +159,7 @@ img.footer-image {
     margin-left: auto;
     margin-right: auto;
 }
+
 div.footer-image-right {
     width: 60%;
     display: block;
@@ -168,4 +176,8 @@ div.footer-image-right {
     height: 150px;
     display: block;
     color: #333E49;
+}
+
+table.experiments {
+    width: 80%;
 }

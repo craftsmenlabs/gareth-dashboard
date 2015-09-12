@@ -1,0 +1,14 @@
+[
+  {
+    "baseline_glueline": "Sample baseline",
+    "assume_glueline": "Sample assume",
+    "time_glueline": "1 minute",
+    "success_glueline": null,
+    "failure_glueline": null,
+    "baseline_execution": "2015-09-11T20:40:59.798Z",
+    "assume_execution": null,
+    "success_execution": null,
+    "failure_execution": null,
+    "experiment_state": null
+  }
+]

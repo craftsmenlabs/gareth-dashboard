@@ -1,3 +1,3 @@
 var config =  {
-    "backendExperimentUrl" : "http://localhost:9999/experiments"
+    "backendExperimentUrl" : "http://localhost:8080/experiments"
 }
