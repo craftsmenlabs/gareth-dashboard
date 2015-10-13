@@ -10,7 +10,5 @@ angular.module('experimentApp', []).controller('ExperimentController', function 
                 });
             });
         });
-
-        console.log($scope.experiments);
     });
 });
