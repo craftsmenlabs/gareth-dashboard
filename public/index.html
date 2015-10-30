@@ -30,6 +30,7 @@
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
     <script src="config.js"></script>
+    <script src="js/lib/moment.min.js"></script>
     <script src="js/experiments.js"></script>
 </head>
 
@@ -113,12 +114,12 @@
                                     <tr class="{{experiment.baseline_state}}">
                                         <th>Baseline</th>
                                         <td>{{experiment.baseline_glueline}}</td>
-                                        <td>{{experiment.baseline_execution}}</td>
+                                        <td>{{experiment.baseline_execution | date:'medium'}}</td>
                                     </tr>
                                     <tr class="{{experiment.assume_state}}">
                                         <th>Assume</th>
                                         <td>{{experiment.assume_glueline}}</td>
-                                        <td>{{experiment.assume_execution}}</td>
+                                        <td>{{experiment.assume_execution | date:'medium'}}</td>
                                     </tr>
                                     <tr>
                                         <th>Time</th>
@@ -127,12 +128,12 @@
                                     <tr class="{{experiment.success_state}}">
                                         <th>Success</th>
                                         <td>{{experiment.success_glueline}}</td>
-                                        <td>{{experiment.success_execution}}</td>
+                                        <td>{{experiment.success_execution | date:'medium'}}</td>
                                     </tr>
                                     <tr class="{{experiment.failure_state}}">
                                         <th>Failure</th>
                                         <td>{{experiment.failure_glueline}}</td>
-                                        <td>{{experiment.failure_execution}}</td>
+                                        <td>{{experiment.failure_execution | date:'medium'}}</td>
                                     </tr>
                                 </table>
 
