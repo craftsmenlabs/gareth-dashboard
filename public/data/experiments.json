@@ -1,43 +1,25 @@
-[{
-  "experiment_name": "Increased registrations",
-  "assumption_has_exception": true,
-  "baseline": "Get the current count of registrations",
-  "success": "Action when successful",
-  "failure": "Action when failure",
-  "assumption_has_definition": true,
-  "baseline_has_definition": true,
-  "assumption_execution": "",
-  "assumption": "The amount of registrations is increased with 50",
-  "baseline_has_exception": true,
-  "time": "In one week",
-  "time_has_definition": true,
-  "baseline_execution": "23-07-2015"
-}, {
-  "experiment_name": "Decrease usage of certain pages",
-  "assumption_has_exception": false,
-  "baseline": "Get the current count of registrations",
-  "success": "Action when successful",
-  "failure": "Action when failure",
-  "assumption_has_definition": true,
-  "baseline_has_definition": true,
-  "assumption_execution": "",
-  "assumption": "The amount of registrations is increased with 50",
-  "baseline_has_exception": false,
-  "time": "In one week",
-  "time_has_definition": true,
-  "baseline_execution": "23-07-2015"
-}, {
-  "experiment_name": "Be able to reach out more",
-  "assumption_has_exception": true,
-  "baseline": "Get the current count of registrations",
-  "success": "Send an email to info@something.io",
-  "failure": "Action when failure",
-  "assumption_has_definition": true,
-  "baseline_has_definition": true,
-  "assumption_execution": true,
-  "assumption": "The amount of registrations is increased with 200",
-  "baseline_has_exception": true,
-  "time": "In one month",
-  "time_has_definition": false,
-  "baseline_execution": ""
-}]
+[
+  {
+    "hash": "a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888be",
+    "experiment_name": "Validate business goal 1",
+    "baseline_glueline": "Sample baseline",
+    "assume_glueline": "Sample assume",
+    "time_glueline": "1 minute",
+    "success_glueline": null,
+    "failure_glueline": null,
+    "_links": [
+      {
+        "params": {
+          "rel": "experimentruns"
+        },
+        "href": "/data/experimentruns/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888be.json"
+      },
+      {
+        "params": {
+          "rel": "rerun"
+        },
+        "href": "http://localhost:8080/experiments-rerun/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888be"
+      }
+    ]
+  }
+]

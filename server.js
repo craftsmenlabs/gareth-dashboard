@@ -4,13 +4,16 @@ var express = require('express')
 
 var expressApp = express();
 
-var configFile = process.env.DASHBOARD_CONFIG || "dev.js";
-
-console.log("config file used", configFile)
+var garethConfig = {
+    'backendExperimentUrl': process.env.GARETH_BACKEND_URL || '/data/experiments.json'
+};
 
 
 expressApp.use(express.static(__dirname + '/public'));
-expressApp.use("/config.js", express.static(__dirname + '/config/' + configFile));
+expressApp.use("/config.json", function (req, res) {
+    res.set("Content-Type", "application/json");
+    res.json(garethConfig);
+});
 var listeningPort = 8765;
 http.createServer(expressApp).listen(listeningPort);
 
