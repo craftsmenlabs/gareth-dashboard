@@ -5,8 +5,8 @@
     "baseline_glueline": "Sample baseline",
     "assume_glueline": "Sample assume",
     "time_glueline": "1 minute",
-    "success_glueline": null,
-    "failure_glueline": null,
+    "success_glueline": "4",
+    "failure_glueline": "1",
     "_links": [
       {
         "params": {
@@ -19,6 +19,29 @@
           "rel": "rerun"
         },
         "href": "http://localhost:8080/experiments-rerun/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888be"
+      }
+    ]
+  },
+  {
+    "hash": "a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bf",
+    "experiment_name": "Validate business goal 2",
+    "baseline_glueline": "Sample baseline",
+    "assume_glueline": "Sample assume",
+    "time_glueline": "1 minute",
+    "success_glueline": null,
+    "failure_glueline": null,
+    "_links": [
+      {
+        "params": {
+          "rel": "experimentruns"
+        },
+        "href": "/data/experimentruns/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bf.json"
+      },
+      {
+        "params": {
+          "rel": "rerun"
+        },
+        "href": "http://localhost:8080/experiments-rerun/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bf"
       }
     ]
   }
