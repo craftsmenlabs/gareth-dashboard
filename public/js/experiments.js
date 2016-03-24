@@ -4,7 +4,7 @@ angular.module('experimentApp', []).controller('ExperimentController', function 
     var config = {};
     var allRuns = 0;
     var failureRuns = 0;
-
+    var failedExperiments = 0;
 
     function init() {
         if (config.backendExperimentUrl) {
@@ -16,7 +16,7 @@ angular.module('experimentApp', []).controller('ExperimentController', function 
                 });
                 $q.all(promises).then(function (responses) {
                     processBatchResponse(data, responses);
-                    drawChart("#experimentChart", allRuns, failureRuns);
+                    drawChart("#experimentChart", $scope.experiments.length, failedExperiments);
                     drawChart("#runChart", allRuns, failureRuns);
                 });
             });
@@ -35,11 +35,15 @@ angular.module('experimentApp', []).controller('ExperimentController', function 
 
     function parseRunsForExperiment(experiment, experimentRuns) {
         console.log(experimentRuns.length + " runs in experiment " + experiment.experiment_name)
+        if (experimentRuns.length > 0) {
+            var experimentCopy = angular.copy(experiment);
+            var lastRun = experimentRuns[experimentRuns.length - 1];
+            failedExperiments += (lastRun.failure_execution ? 1 : 0);
+            $scope.experiments.push(angular.merge(experimentCopy, lastRun));
+        }
         experimentRuns.forEach(function (er) {
             allRuns = allRuns + 1;
-            var experimentCopy = angular.copy(experiment);
             failureRuns += (er.failure_execution ? 1 : 0);
-            $scope.experiments.push(angular.merge(experimentCopy, er));
         });
     }
 
