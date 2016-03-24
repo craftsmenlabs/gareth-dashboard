@@ -106,9 +106,9 @@
                                     <thead>
                                     <tr>
 
-                                        <td><a ng-click="rerun(experiment._links[1].href)">  <h3><span class="glyphicon glyphicon-refresh"></span></h3></a></td>
-                                        <td><a href="" class="collapsed" ng-click="collapsed=!collapsed"><h3>Experiment: {{experiment.experiment_name}}</h3></a></td>
-                                        <td><p class="{{experiment.assume_state}}"><span class="glyphicon glyphicon-dashboard"></span></p></td>
+                                        <th><a ng-click="rerun(experiment._links[1].href)">  <h3><span class="glyphicon glyphicon-refresh"></span></h3></a></th>
+                                        <th><a href="" class="collapsed" ng-click="collapsed=!collapsed"><h3>Experiment: {{experiment.experiment_name}}</h3></a></th>
+                                        <th><p class="{{experiment.assume_state}}"><span class="glyphicon glyphicon-dashboard"></span></p></th>
                                     </tr>
                                     </thead>
                                 </table>
@@ -128,9 +128,9 @@
 
                                   <tr>
                                       <th>Baseline</th>
-                                      <td>{{experiment.baseline_glueline}}</td>
-                                      <td>{{experiment.baseline_execution | date:'medium'}}</td>
-                                      <td><p class="{{experiment.baseline_state}}"><span class="glyphicon glyphicon-download-alt"></span></p></td>
+                                      <th>{{experiment.baseline_glueline}}</td>
+                                      <th>{{experiment.baseline_execution | date:'medium'}}</th>
+                                      <th><p class="{{experiment.baseline_state}}"><span class="glyphicon glyphicon-download-alt"></span></p></th>
                                   </tr>
 
                                   <tr>
