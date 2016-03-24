@@ -28,7 +28,7 @@
     "success_execution": "2015-12-16T09:12:31.675Z",
     "failure_execution": null,
     "baseline_state": "finished",
-    "assume_state": "finished",
+    "assume_state": "error",
     "success_state": "non_existent",
     "failure_state": "non_existent"
   }
