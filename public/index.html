@@ -105,10 +105,10 @@
 
                                     <thead>
                                     <tr>
-                                        <th colspan="2"></th>
-                                        <th><a ng-click="rerun(experiment._links[1].href)">  <span class="glyphicon glyphicon-refresh"></span></a></th>
-                                        <th><a href="" class="collapsed" ng-click="collapsed=!collapsed"><h3>Experiment: {{experiment.experiment_name}}</h3></a></th>
-                                        <td><p class="{{experiment.assume_state}}"><span class="glyphicon glyphicon-flash"></span></p></td>
+
+                                        <td><a ng-click="rerun(experiment._links[1].href)">  <h3><span class="glyphicon glyphicon-refresh"></span></h3></a></td>
+                                        <td><a href="" class="collapsed" ng-click="collapsed=!collapsed"><h3>Experiment: {{experiment.experiment_name}}</h3></a></td>
+                                        <td><p class="{{experiment.assume_state}}"><span class="glyphicon glyphicon-dashboard"></span></p></td>
                                     </tr>
                                     </thead>
                                 </table>
@@ -130,14 +130,14 @@
                                       <th>Baseline</th>
                                       <td>{{experiment.baseline_glueline}}</td>
                                       <td>{{experiment.baseline_execution | date:'medium'}}</td>
-                                      <td><p class="{{experiment.baseline_state}}"><span class="glyphicon glyphicon-flash"></span></p></td>
+                                      <td><p class="{{experiment.baseline_state}}"><span class="glyphicon glyphicon-download-alt"></span></p></td>
                                   </tr>
 
                                   <tr>
                                       <th>Assumption</th>
                                       <td>{{experiment.assume_glueline}}</td>
                                       <td>{{experiment.assume_execution | date:'medium'}}</td>
-                                      <td><p class="{{experiment.assume_state}}"><span class="glyphicon glyphicon-flash"></span></p></td>
+                                      <td><p class="{{experiment.assume_state}}"><span class="glyphicon glyphicon-question-sign"></span></p></td>
                                   </tr>
 
                                   <tr>
@@ -149,7 +149,7 @@
                                       <th>Success</th>
                                       <td>{{experiment.success_glueline}}</td>
                                       <td>{{experiment.success_execution | date:'medium'}}</td>
-                                      <td><p class="{{experiment.success_state}}"><span class="glyphicon glyphicon-ok"></span></p></td>
+                                      <td><p class="{{experiment.success_state}}"><span class="glyphicon glyphicon-ok-sign"></span></p></td>
                                   </tr>
 
                                   <tr>
