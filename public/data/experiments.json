@@ -67,5 +67,28 @@
         "href": "http://localhost:8080/experiments-rerun/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bB"
       }
     ]
+  },
+  {
+    "hash": "a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bC",
+    "experiment_name": "As above (more baselines and assumptions for one experiment)",
+    "baseline_glueline": "Get the number of discounted rooms booked in the last 6 months.",
+    "assume_glueline": "After 6 months, bookings of discounted rooms have increased by 80%.",
+    "time_glueline": "6 months",
+    "success_glueline": "Send reminder to buy cake for the developers.",
+    "failure_glueline": "Create an investigative story on the backlog.",
+    "_links": [
+      {
+        "params": {
+          "rel": "experimentruns"
+        },
+        "href": "/data/experimentruns/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bC.json"
+      },
+      {
+        "params": {
+          "rel": "rerun"
+        },
+        "href": "http://localhost:8080/experiments-rerun/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bC"
+      }
+    ]
   }
 ]

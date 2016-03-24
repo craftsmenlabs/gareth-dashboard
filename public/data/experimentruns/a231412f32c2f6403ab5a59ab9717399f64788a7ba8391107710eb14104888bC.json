@@ -5,7 +5,7 @@
     "assume_execution": "2015-12-16T09:12:31.675Z",
     "success_execution": null,
     "failure_execution": null,
-    "baseline_state": "running",
+    "baseline_state": "open",
     "assume_state": "non_existent",
     "success_state": "non_existent",
     "failure_state": "non_existent"
