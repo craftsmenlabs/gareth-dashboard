@@ -13,12 +13,10 @@
     <meta content="" name="author"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <!-- Latest compiled and minified CSS -->
-    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/piechart.css">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -32,7 +30,6 @@
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
     <script src="js/lib/moment.min.js"></script>
-    <script src="js/lib/piechart.js"></script>
     <script src="js/experiments.js"></script>
 </head>
 
@@ -57,17 +54,20 @@
                 Statistics
             </div>
 
-            <div class="row" style="height: 300px;">
-                <div class="col-md-3">
-                    <div id="experimentChart" class="chart"></div>
-                    #Experiment
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="images/placeholders/c7Vva.png"/>
+                    <h4>Running experiments</h4>
                 </div>
-                <div class="col-md-3">
-                    <div id="runChart" class="chart"></div>
-                    Experiment runs
+                <div class="col-md-4">
+                    <img src="images/placeholders/c7Vva.png" align="center"/>
+                    <h4>Failing baselines</h4>
+                </div>
+                <div class="col-md-4">
+                    <img src="images/placeholders/c7Vva.png"/>
+                    <h4>Failing assumptions</h4>
                 </div>
             </div>
-
 
         </div>
         <!-- END PAGE CONTENT-->
@@ -81,10 +81,11 @@
 
 <!-- BEGIN THE TABLE-->
 <div class="container">
+
     <div class="row">
         <div class="col-md-12">
             <div class="h3">
-                <span class="glyphicon glyphicon-fire"></span>
+                <span class="glyphicon glyphicon-refresh"></span>
                 Running experiments
             </div>
 
@@ -105,62 +106,37 @@
 
                                     <thead>
                                     <tr>
-                                        <th colspan="2"></th>
-                                        <th><a ng-click="rerun(experiment._links[1].href)">  <span class="glyphicon glyphicon-refresh"></span></a></th>
-                                        <th><a href="" class="collapsed" ng-click="collapsed=!collapsed"><h3>Experiment: {{experiment.experiment_name}}</h3></a></th>
-                                        <td><p class="{{experiment.assume_state}}"><span class="glyphicon glyphicon-flash"></span></p></td>
+                                        <th colspan="3"><a href="" class="collapsed" ng-click="collapsed=!collapsed"><h3>Experiment:
+                                            {{experiment.experiment_name}}</h3></a><a ng-click="rerun(experiment._links[1].href)">Rerun</a></th>
                                     </tr>
                                     </thead>
+                                    <tr class="{{experiment.baseline_state}}">
+                                        <th>Baseline</th>
+                                        <td>{{experiment.baseline_glueline}}</td>
+                                        <td>{{experiment.baseline_execution | date:'medium'}}</td>
+                                    </tr>
+                                    <tr class="{{experiment.assume_state}}">
+                                        <th>Assume</th>
+                                        <td>{{experiment.assume_glueline}}</td>
+                                        <td>{{experiment.assume_execution | date:'medium'}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Time</th>
+                                        <td colspan="2">{{experiment.time_glueline}}</td>
+                                    </tr>
+                                    <tr class="{{experiment.success_state}}">
+                                        <th>Success</th>
+                                        <td>{{experiment.success_glueline}}</td>
+                                        <td>{{experiment.success_execution | date:'medium'}}</td>
+                                    </tr>
+                                    <tr class="{{experiment.failure_state}}">
+                                        <th>Failure</th>
+                                        <td>{{experiment.failure_glueline}}</td>
+                                        <td>{{experiment.failure_execution | date:'medium'}}</td>
+                                    </tr>
                                 </table>
-                            </div>
 
-                            <div ng-show="collapsed">
-                              <table class="table">
-                                <thead>
-                                  <tr>
-                                      <th colspan="2"></th>
-                                      <th>Execution date/time</th>
-                                      <th>Execution status</th>
-                                  </tr>
-                                </thead>
 
-                                <tbody>
-
-                                  <tr>
-                                      <th>Baseline</th>
-                                      <td>{{experiment.baseline_glueline}}</td>
-                                      <td>{{experiment.baseline_execution | date:'medium'}}</td>
-                                      <td><p class="{{experiment.baseline_state}}"><span class="glyphicon glyphicon-flash"></span></p></td>
-                                  </tr>
-
-                                  <tr>
-                                      <th>Assumption</th>
-                                      <td>{{experiment.assume_glueline}}</td>
-                                      <td>{{experiment.assume_execution | date:'medium'}}</td>
-                                      <td><p class="{{experiment.assume_state}}"><span class="glyphicon glyphicon-flash"></span></p></td>
-                                  </tr>
-
-                                  <tr>
-                                      <th>Time</th>
-                                      <td colspan="3">{{experiment.time_glueline}}</td>
-                                  </tr>
-
-                                  <tr>
-                                      <th>Success</th>
-                                      <td>{{experiment.success_glueline}}</td>
-                                      <td>{{experiment.success_execution | date:'medium'}}</td>
-                                      <td><p class="{{experiment.success_state}}"><span class="glyphicon glyphicon-ok"></span></p></td>
-                                  </tr>
-
-                                  <tr>
-                                      <th>Failure</th>
-                                      <td>{{experiment.failure_glueline}}</td>
-                                      <td>{{experiment.failure_execution | date:'medium'}}</td>
-                                      <td><p class="{{experiment.failure_state}}"><span class="glyphicon glyphicon-exclamation-sign"></span></p></td>
-                                  </tr>
-
-                                </tbody>
-                              </table>
                             </div>
 
                         </div>

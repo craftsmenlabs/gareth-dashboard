@@ -1,0 +1,13 @@
+[
+  {
+    "hash": null,
+    "baseline_execution": "2015-12-16T09:11:31.593Z",
+    "assume_execution": "2015-12-16T09:12:31.675Z",
+    "success_execution": null,
+    "failure_execution": null,
+    "baseline_state": "finished",
+    "assume_state": "finished",
+    "success_state": "finished",
+    "failure_state": "non_existent"
+  }
+]
