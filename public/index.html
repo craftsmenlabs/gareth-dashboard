@@ -36,7 +36,7 @@
     <script src="js/experiments.js"></script>
 </head>
 
-<body>
+<body ng-controller="ExperimentController as experimentController">
 <!--HEADER-->
 <div class="container">
     <div class="row">
@@ -58,13 +58,21 @@
             </div>
 
             <div class="row" style="height: 300px;">
-                <div class="col-md-3">
+                <div class="col-md-3 chartContainer">
+                    <h3 class="chartHeader">Experiments</h3>
                     <div id="experimentChart" class="chart"></div>
-                    #Experiment
+                    <div class="chartFooter">
+                        <span ng-if="failedExperiments == 0">All {{allExperiments}} experiments successful.</span>
+                        <span ng-if="failedExperiments != 0">{{failedExperiments}} of {{allExperiments}} experiments failed.</span>
+                    </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 chartContainer">
+                    <h3 class="chartHeader">Runs</h3>
                     <div id="runChart" class="chart"></div>
-                    Experiment runs
+                    <div class="chartFooter">
+                        <span ng-if="failureRuns == 0">All {{allRuns}} runs successful.</span>
+                        <span ng-if="failureRuns != 0">{{failureRuns}} of {{allRuns}} runs failed.</span>
+                    </div>
                 </div>
             </div>
 
@@ -95,14 +103,12 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12" ng-controller="ExperimentController as experimentController">
+            <div class="col-md-12">
                 <div class="bg-white">
                     <div ng-app id="ng-app">
                         <div ng-repeat="experiment in experiments">
-
                             <div class="panel-heading">
                                 <table class="table-condensed experiments">
-
                                     <thead>
                                     <tr>
 
