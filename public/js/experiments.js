@@ -1,6 +1,5 @@
 angular.module('experimentApp', []).controller('ExperimentController', function ($scope, $http, $q) {
 
-
     var config = {};
     $scope.allRuns = 0;
     $scope.failureRuns = 0;
@@ -11,12 +10,13 @@ angular.module('experimentApp', []).controller('ExperimentController', function 
         if (config.backendExperimentUrl) {
             $http.get(config.backendExperimentUrl).success(function (data) {
                 $scope.experiments = [];
+                //an http.get needs to be done for each experiment. The responses are batched
                 var promises = [];
                 data.forEach(function (experiment, i) {
                     promises.push($http.get(experiment._links[0].href))
                 });
                 $q.all(promises).then(function (responses) {
-                    processBatchResponse(data, responses);
+                    processExperimentRunResults(data, responses);
                     $scope.allExperiments = $scope.experiments.length;
                     drawChart("#experimentChart", $scope.allExperiments, $scope.failedExperiments);
                     drawChart("#runChart", $scope.allRuns, $scope.failureRuns);
@@ -27,16 +27,14 @@ angular.module('experimentApp', []).controller('ExperimentController', function 
         }
     }
 
-    function processBatchResponse(experiments, responses) {
+    //responses is an array of experiment-run arrays
+    function processExperimentRunResults(experiments, responses) {
         experiments.forEach(function (experiment, i) {
-            var runs = responses[i].data;
-            console.log(runs)
-            parseRunsForExperiment(experiment, runs);
+            parseRunsForExperiment(experiment, responses[i].data);
         });
     }
 
     function parseRunsForExperiment(experiment, experimentRuns) {
-        console.log(experimentRuns.length + " runs in experiment " + experiment.experiment_name)
         if (experimentRuns.length > 0) {
             var experimentCopy = angular.copy(experiment);
             var lastRun = experimentRuns[experimentRuns.length - 1];
