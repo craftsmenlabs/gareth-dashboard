@@ -1,12 +1,35 @@
 [
   {
+    "hash": "a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bA",
+    "experiment_name": "By giving players the option to invite friends semi-automatically the number of players will increase.",
+    "baseline_glueline": "Get the current amount players.",
+    "assume_glueline": "There will be a 10% increase in new players.",
+    "time_glueline": "1 month.",
+    "success_glueline": "Send cake to the whole team with congratulations.",
+    "failure_glueline": "Push message to Product Owner.",
+    "_links": [
+      {
+        "params": {
+          "rel": "experimentruns"
+        },
+        "href": "/data/experimentruns/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bA.json"
+      },
+      {
+        "params": {
+          "rel": "rerun"
+        },
+        "href": "http://localhost:8080/experiments-rerun/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bA"
+      }
+    ]
+  },
+  {
     "hash": "a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888be",
-    "experiment_name": "Validate business goal 1",
-    "baseline_glueline": "Sample baseline",
-    "assume_glueline": "Sample assume",
+    "experiment_name": "I want to validate that by showing the discounted rooms first, there will be an increase in booked rooms..",
+    "baseline_glueline": "Get the current number of discounted rooms booked per week.",
+    "assume_glueline": "There will be an increase in bookings for discounted rooms of 25 per week in the first month.",
     "time_glueline": "1 minute",
-    "success_glueline": null,
-    "failure_glueline": null,
+    "success_glueline": "Send email to the whole team with congratulations.",
+    "failure_glueline": "Send an email to the Product Owner.",
     "_links": [
       {
         "params": {
@@ -19,6 +42,29 @@
           "rel": "rerun"
         },
         "href": "http://localhost:8080/experiments-rerun/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888be"
+      }
+    ]
+  },
+  {
+    "hash": "a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bB",
+    "experiment_name": "As above (more baselines and assumptions for one experiment)",
+    "baseline_glueline": "Get the number of discounted rooms booked in the last 6 months.",
+    "assume_glueline": "After 6 months, bookings of discounted rooms have increased by 80%.",
+    "time_glueline": "6 months",
+    "success_glueline": "Send reminder to buy cake for the developers.",
+    "failure_glueline": "Create an investigative story on the backlog.",
+    "_links": [
+      {
+        "params": {
+          "rel": "experimentruns"
+        },
+        "href": "/data/experimentruns/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bB.json"
+      },
+      {
+        "params": {
+          "rel": "rerun"
+        },
+        "href": "http://localhost:8080/experiments-rerun/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bB"
       }
     ]
   }

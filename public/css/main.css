@@ -46,6 +46,32 @@ p.subtitle {
     margin: 0.1em;
     font-weight: 300;
     font-size: 1.2em;
+    color: #ee8074;
+}
+
+p.error {
+    color: #ee8074;
+    font-size: 1.8em;
+}
+
+p.finished {
+    color: #008000;
+    font-size: 1.8em;
+}
+
+p.open {
+    color: #FFA500;
+    font-size: 1.8em;
+}
+
+p.running {
+    color: #eeeb8d;
+    font-size: 1.8em;
+}
+
+p.non_existent {
+    color: #c6c6c6;
+    font-size: 1.8em;
 }
 
 strong {
@@ -113,23 +139,6 @@ div.container {
     padding-right: 0;
 }
 
-<!--
-Trying to get the text colored according to the experiment status-- >
-p.red {
-    color: #ee8074;
-}
-
-p.green {
-    color: #008000;
-}
-
-p.yellow {
-    color: #FFA500;
-}
-
-p.gray {
-    color: #c6c6c6;
-}
 
 tr.error {
     background-color: #ee8074;
