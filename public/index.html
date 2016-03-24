@@ -36,7 +36,7 @@
     <script src="js/experiments.js"></script>
 </head>
 
-<body>
+<body ng-controller="ExperimentController as experimentController">
 <!--HEADER-->
 <div class="container">
     <div class="row">
@@ -58,13 +58,21 @@
             </div>
 
             <div class="row" style="height: 300px;">
-                <div class="col-md-3">
+                <div class="col-md-3 chartContainer">
+                    <h3 class="chartHeader">Experiments</h3>
                     <div id="experimentChart" class="chart"></div>
-                    #Experiment
+                    <div class="chartFooter">
+                        <span ng-if="failedExperiments == 0">All {{allExperiments}} experiments successful.</span>
+                        <span ng-if="failedExperiments != 0">{{failedExperiments}} of {{allExperiments}} experiments failed.</span>
+                    </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 chartContainer">
+                    <h3 class="chartHeader">Runs</h3>
                     <div id="runChart" class="chart"></div>
-                    Experiment runs
+                    <div class="chartFooter">
+                        <span ng-if="failureRuns == 0">All {{allRuns}} runs successful.</span>
+                        <span ng-if="failureRuns != 0">{{failureRuns}} of {{allRuns}} runs failed.</span>
+                    </div>
                 </div>
             </div>
 
@@ -95,72 +103,76 @@
         </div>
 
         <div class="row">
-            <div class="col-md-12" ng-controller="ExperimentController as experimentController">
+            <div class="col-md-12">
                 <div class="bg-white">
                     <div ng-app id="ng-app">
                         <div ng-repeat="experiment in experiments">
-
                             <div class="panel-heading">
                                 <table class="table-condensed experiments">
-
                                     <thead>
                                     <tr>
-
-                                        <td><a ng-click="rerun(experiment._links[1].href)">  <h3><span class="glyphicon glyphicon-refresh"></span></h3></a></td>
-                                        <td><a href="" class="collapsed" ng-click="collapsed=!collapsed"><h3>Experiment: {{experiment.experiment_name}}</h3></a></td>
-                                        <td><p class="{{experiment.assume_state}}"><span class="glyphicon glyphicon-dashboard"></span></p></td>
+                                        <td><a ng-click="rerun(experiment._links[1].href)"><h3><span
+                                                class="glyphicon glyphicon-refresh"></span></h3></a></td>
+                                        <td><a href="" class="collapsed" ng-click="collapsed=!collapsed"><h3>Experiment:
+                                            {{experiment.experiment_name}}</h3></a></td>
+                                        <td><p class="{{experiment.assume_state}}"><span
+                                                class="glyphicon glyphicon-dashboard"></span></p></td>
                                     </tr>
                                     </thead>
                                 </table>
                             </div>
 
                             <div ng-show="collapsed">
-                              <table class="table">
-                                <thead>
-                                  <tr>
-                                      <th colspan="2"></th>
-                                      <th>Execution date/time</th>
-                                      <th>Execution status</th>
-                                  </tr>
-                                </thead>
+                                <table class="table">
+                                    <thead>
+                                    <tr>
+                                        <th colspan="2"></th>
+                                        <th>Execution date/time</th>
+                                        <th>Execution status</th>
+                                    </tr>
+                                    </thead>
 
-                                <tbody>
+                                    <tbody>
 
-                                  <tr>
-                                      <th>Baseline</th>
-                                      <td>{{experiment.baseline_glueline}}</td>
-                                      <td>{{experiment.baseline_execution | date:'medium'}}</td>
-                                      <td><p class="{{experiment.baseline_state}}"><span class="glyphicon glyphicon-download-alt"></span></p></td>
-                                  </tr>
+                                    <tr>
+                                        <th>Baseline</th>
+                                        <td>{{experiment.baseline_glueline}}</td>
+                                        <td>{{experiment.baseline_execution | date:'medium'}}</td>
+                                        <td><p class="{{experiment.baseline_state}}"><span
+                                                class="glyphicon glyphicon-download-alt"></span></p></td>
+                                    </tr>
 
-                                  <tr>
-                                      <th>Assumption</th>
-                                      <td>{{experiment.assume_glueline}}</td>
-                                      <td>{{experiment.assume_execution | date:'medium'}}</td>
-                                      <td><p class="{{experiment.assume_state}}"><span class="glyphicon glyphicon-question-sign"></span></p></td>
-                                  </tr>
+                                    <tr>
+                                        <th>Assumption</th>
+                                        <td>{{experiment.assume_glueline}}</td>
+                                        <td>{{experiment.assume_execution | date:'medium'}}</td>
+                                        <td><p class="{{experiment.assume_state}}"><span
+                                                class="glyphicon glyphicon-question-sign"></span></p></td>
+                                    </tr>
 
-                                  <tr>
-                                      <th>Time</th>
-                                      <td colspan="3">{{experiment.time_glueline}}</td>
-                                  </tr>
+                                    <tr>
+                                        <th>Time</th>
+                                        <td colspan="3">{{experiment.time_glueline}}</td>
+                                    </tr>
 
-                                  <tr>
-                                      <th>Success</th>
-                                      <td>{{experiment.success_glueline}}</td>
-                                      <td>{{experiment.success_execution | date:'medium'}}</td>
-                                      <td><p class="{{experiment.success_state}}"><span class="glyphicon glyphicon-ok-sign"></span></p></td>
-                                  </tr>
+                                    <tr>
+                                        <th>Success</th>
+                                        <td>{{experiment.success_glueline}}</td>
+                                        <td>{{experiment.success_execution | date:'medium'}}</td>
+                                        <td><p class="{{experiment.success_state}}"><span
+                                                class="glyphicon glyphicon-ok-sign"></span></p></td>
+                                    </tr>
 
-                                  <tr>
-                                      <th>Failure</th>
-                                      <td>{{experiment.failure_glueline}}</td>
-                                      <td>{{experiment.failure_execution | date:'medium'}}</td>
-                                      <td><p class="{{experiment.failure_state}}"><span class="glyphicon glyphicon-exclamation-sign"></span></p></td>
-                                  </tr>
+                                    <tr>
+                                        <th>Failure</th>
+                                        <td>{{experiment.failure_glueline}}</td>
+                                        <td>{{experiment.failure_execution | date:'medium'}}</td>
+                                        <td><p class="{{experiment.failure_state}}"><span
+                                                class="glyphicon glyphicon-exclamation-sign"></span></p></td>
+                                    </tr>
 
-                                </tbody>
-                              </table>
+                                    </tbody>
+                                </table>
                             </div>
 
                         </div>

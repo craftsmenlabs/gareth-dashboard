@@ -2,9 +2,10 @@ angular.module('experimentApp', []).controller('ExperimentController', function 
 
 
     var config = {};
-    var allRuns = 0;
-    var failureRuns = 0;
-    var failedExperiments = 0;
+    $scope.allRuns = 0;
+    $scope.failureRuns = 0;
+    $scope.failedExperiments = 0;
+    $scope.allExperiments = 0;
 
     function init() {
         if (config.backendExperimentUrl) {
@@ -16,8 +17,9 @@ angular.module('experimentApp', []).controller('ExperimentController', function 
                 });
                 $q.all(promises).then(function (responses) {
                     processBatchResponse(data, responses);
-                    drawChart("#experimentChart", $scope.experiments.length, failedExperiments);
-                    drawChart("#runChart", allRuns, failureRuns);
+                    $scope.allExperiments = $scope.experiments.length;
+                    drawChart("#experimentChart", $scope.allExperiments, $scope.failedExperiments);
+                    drawChart("#runChart", $scope.allRuns, $scope.failureRuns);
                 });
             });
         } else {
@@ -38,12 +40,12 @@ angular.module('experimentApp', []).controller('ExperimentController', function 
         if (experimentRuns.length > 0) {
             var experimentCopy = angular.copy(experiment);
             var lastRun = experimentRuns[experimentRuns.length - 1];
-            failedExperiments += (lastRun.failure_execution ? 1 : 0);
+            $scope.failedExperiments += (lastRun.failure_execution ? 1 : 0);
             $scope.experiments.push(angular.merge(experimentCopy, lastRun));
         }
         experimentRuns.forEach(function (er) {
-            allRuns = allRuns + 1;
-            failureRuns += (er.failure_execution ? 1 : 0);
+            $scope.allRuns = $scope.allRuns + 1;
+            $scope.failureRuns += (er.failure_execution ? 1 : 0);
         });
     }
 

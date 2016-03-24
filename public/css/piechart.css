@@ -2,8 +2,26 @@
 
 .chart {
     position: absolute;
+    margin: 10px 0px 2px 0px;
     width: 250px;
-    height: 400px;
+    height: 300px;
+}
+
+.chartContainer {
+    position: relative;
+    height: 100%;
+}
+
+H3.chartHeader {
+    position: absolute;
+    top: 0px;
+    left: 70px;
+}
+
+.chartFooter {
+    position: absolute;
+    bottom: 0;
+    left: 70px;
 }
 
 .pieTip {
