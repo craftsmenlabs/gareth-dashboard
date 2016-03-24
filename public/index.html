@@ -13,12 +13,12 @@
     <meta content="" name="author"/>
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <!-- Latest compiled and minified CSS -->
+    <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
-
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
-
+    <link rel="stylesheet" href="css/piechart.css">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
@@ -32,6 +32,7 @@
     <!-- Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
     <script src="js/lib/moment.min.js"></script>
+    <script src="js/lib/piechart.js"></script>
     <script src="js/experiments.js"></script>
 </head>
 
@@ -56,20 +57,17 @@
                 Statistics
             </div>
 
-            <div class="row">
-                <div class="col-md-4">
-                    <img src="images/placeholders/c7Vva.png"/>
-                    <h4>Running experiments</h4>
+            <div class="row" style="height: 300px;">
+                <div class="col-md-3">
+                    <div id="experimentChart" class="chart"></div>
+                    #Experiment
                 </div>
-                <div class="col-md-4">
-                    <img src="images/placeholders/c7Vva.png" align="center"/>
-                    <h4>Failing baselines</h4>
-                </div>
-                <div class="col-md-4">
-                    <img src="images/placeholders/c7Vva.png"/>
-                    <h4>Failing assumptions</h4>
+                <div class="col-md-3">
+                    <div id="runChart" class="chart"></div>
+                    Experiment runs
                 </div>
             </div>
+
 
         </div>
         <!-- END PAGE CONTENT-->
@@ -164,6 +162,7 @@
                                 </tbody>
                               </table>
                             </div>
+
                         </div>
                     </div>
                 </div>
