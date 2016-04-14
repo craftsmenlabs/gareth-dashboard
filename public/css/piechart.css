@@ -12,10 +12,10 @@
     height: 100%;
 }
 
-H3.chartHeader {
-    position: absolute;
-    top: 0px;
-    left: 70px;
+h3.chartHeader {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .chartFooter {

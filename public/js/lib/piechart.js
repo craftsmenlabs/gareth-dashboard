@@ -2,8 +2,8 @@ function drawChart(chartName, all, failed) {
     //var failed = 360 * (failed / all);
     //var ok = 360 - failed;
     $(chartName).drawPieChart([
-        {title: "Success", value: all - failed, color: "#43e7ac"},
-        {title: "Failure", value: failed, color: "#e71242"}
+        {title: "Success", value: all - failed, color: "#08ba15"},
+        {title: "Failure", value: failed, color: "#fb0101"}
     ]);
 }
 

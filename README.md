@@ -6,7 +6,8 @@
 * Open terminal and go to the cloned directory,
 * Type *NPM install*
 
-After all is installed you can get the server up and running by typing *node server,js*
+After all is installed you can get the server up and running by typing *node server.js*
+The dashboard will be visible @ http://localhost:8765/
 
 ## Starting the Docker container
 

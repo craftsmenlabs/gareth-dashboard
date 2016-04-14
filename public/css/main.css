@@ -40,6 +40,14 @@ h6 {
     font-size: 4em;
     font-weight: bold;
     text-align: center;
+    color: #008000;
+}
+h6.error {
+    color: #fa2009;
+}
+
+h6.neutral {
+    color: #c6c6c6;
 }
 
 p.subtitle {
