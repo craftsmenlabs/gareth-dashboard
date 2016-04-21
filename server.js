@@ -5,7 +5,8 @@ var express = require('express')
 var expressApp = express();
 
 var garethConfig = {
-    'backendExperimentUrl': process.env.GARETH_BACKEND_URL || '/data/experiments.json'
+    // 'backendExperimentUrl': process.env.GARETH_BACKEND_URL || '/data/experiments.json'
+    'backendExperimentUrl': 'http://localhost:8080/experiments'
 };
 
 
