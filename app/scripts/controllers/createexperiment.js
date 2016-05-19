@@ -27,6 +27,13 @@ angular.module('garethApp')
     $scope.failure.querySearch = queryDefinitions;
 
     $scope.create = function () {
+
+      $scope.experiment.baseline_glueline = $scope.baseline.searchText;
+      $scope.experiment.assume_glueline = $scope.assume.searchText;
+      $scope.experiment.time_glueline = $scope.time.searchText;
+      $scope.experiment.success_glueline = $scope.success.searchText;
+      $scope.experiment.failure_glueline = $scope.failure.searchText;
+
       console.log(JSON.stringify($scope.experiment));
       $http.post("http://localhost:8080/definitions", $scope.experiment
       ).then(handleSuccess, handleError('Error executing command'));
