@@ -9,12 +9,14 @@
  */
 angular.module('garethApp')
   .controller('CreateexperimentCtrl', function ($scope, $http) {
-    $scope.jsonString = "";
+    $scope.experiment = {};
 
-    $scope.apply = function () {
-      var result = JSON.parse($scope.jsonString);
+    $scope.create = function () {
+      // var result = JSON.parse($scope.jsonString);
+      console.log(JSON.stringify($scope.experiment));
+      // console.log(JSON.stringify(experiment2));
 
-        $http.post("http://localhost:8080/definitions", result
+      $http.post("http://localhost:8080/definitions", $scope.experiment
       ).then(handleSuccess, handleError('Error executing command'));
     };
 

@@ -1,11 +1,47 @@
 <form name="experimentForm">
 
-  <md-input-container class="md-block" flex-gt-sm>
-    <label>Raw JSON</label>
-    <input ng-model="jsonString">
-
-
-    <md-button class="md-raised md-primary" ng-click="apply()">Primary</md-button>
-
+  <md-input-container class="md-block"  flex-gt-sm>
+    <label>Experiment name</label>
+    <input ng-model="experiment.experiment_name" required name="experiment_name">
+    <div ng-messages="experimentForm.experiment_name.$error">
+      <div ng-message="required">This is required.</div>
+    </div>
   </md-input-container>
+
+  <md-input-container class="md-block" required flex-gt-sm>
+    <label>Baseline</label>
+    <input ng-model="experiment.baseline_glueline">
+  </md-input-container>
+
+  <md-input-container class="md-block" required flex-gt-sm>
+    <label>Assume</label>
+    <input ng-model="experiment.assume_glueline">
+  </md-input-container>
+
+  <md-input-container class="md-block" required flex-gt-sm>
+    <label>Time</label>
+    <input ng-model="experiment.time_glueline">
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Success</label>
+    <input ng-model="experiment.success_glueline">
+  </md-input-container>
+
+  <md-input-container class="md-block" flex-gt-sm>
+    <label>Failure</label>
+    <input ng-model="experiment.failure_glueline">
+  </md-input-container>
+
+  <md-button class="md-raised md-primary" ng-click="create()">Create</md-button>
 </form>
+
+
+
+
+<!--{-->
+<!--"":"has risen by 61 per cent",-->
+<!--"":"4 seconds",-->
+<!--"":"send cake to developers",-->
+<!--"":"Blame the suits"-->
+<!--}-->

@@ -16,6 +16,7 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ngMessages',
     'ngMaterial'
   ])
   .config(function ($mdThemingProvider) {
