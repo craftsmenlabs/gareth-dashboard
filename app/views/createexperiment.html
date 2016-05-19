@@ -1,4 +1,4 @@
-<form name="experimentForm">
+<form name="experimentForm" ng-submit="create()">
 
   <md-input-container class="md-block" flex-gt-sm>
     <label>Experiment name</label>
@@ -8,41 +8,43 @@
     </div>
   </md-input-container>
 
-  <md-autocomplete
-    flex required
-    md-input-name="baselineAutocomplete"
-    md-selected-item="baseline.selectedItem"
-    md-search-text-change="baseline.searchTextChange(baseline.searchText)"
-    md-search-text="baseline.searchText"
-    md-items="item in baseline.querySearch('baseline', baseline.searchText)"
-    md-item-text="item.display"
-    md-min-length="0"
-    md-floating-label="Baseline">
-    <md-item-template>
-      <span md-highlight-text="baseline.searchText">{{item.display}}</span>
-    </md-item-template>
-    <div ng-messages="experimentForm.baselineAutocomplete.$error" ng-if="experimentForm.baselineAutocomplete.$touched">
-      <div ng-message="required">This is required.</div>
-    </div>
-  </md-autocomplete>
+  <div layout-gt-sm="row">
+    <md-autocomplete
+      flex required
+      md-input-name="baselineAutocomplete"
+      md-selected-item="baseline.selectedItem"
+      md-search-text-change="baseline.searchTextChange(baseline.searchText)"
+      md-search-text="baseline.searchText"
+      md-items="item in baseline.querySearch('baseline', baseline.searchText)"
+      md-item-text="item.display"
+      md-min-length="0"
+      md-floating-label="Baseline">
+      <md-item-template>
+        <span md-highlight-text="baseline.searchText">{{item.display}}</span>
+      </md-item-template>
+      <div ng-messages="experimentForm.baselineAutocomplete.$error" ng-if="experimentForm.baselineAutocomplete.$touched">
+        <div ng-message="required">This is required.</div>
+      </div>
+    </md-autocomplete>
 
-  <md-autocomplete
-    flex required
-    md-input-name="assumeAutocomplete"
-    md-selected-item="assume.selectedItem"
-    md-search-text-change="assume.searchTextChange(assume.searchText)"
-    md-search-text="assume.searchText"
-    md-items="item in assume.querySearch('assume', assume.searchText)"
-    md-item-text="item.display"
-    md-min-length="0"
-    md-floating-label="Assume">
-    <md-item-template>
-      <span md-highlight-text="assume.searchText">{{item.display}}</span>
-    </md-item-template>
-    <div ng-messages="experimentForm.assumeAutocomplete.$error" ng-if="experimentForm.assumeAutocomplete.$touched">
-      <div ng-message="required">This is required.</div>
-    </div>
-  </md-autocomplete>
+    <md-autocomplete
+      flex required
+      md-input-name="assumeAutocomplete"
+      md-selected-item="assume.selectedItem"
+      md-search-text-change="assume.searchTextChange(assume.searchText)"
+      md-search-text="assume.searchText"
+      md-items="item in assume.querySearch('assume', assume.searchText)"
+      md-item-text="item.display"
+      md-min-length="0"
+      md-floating-label="Assume">
+      <md-item-template>
+        <span md-highlight-text="assume.searchText">{{item.display}}</span>
+      </md-item-template>
+      <div ng-messages="experimentForm.assumeAutocomplete.$error" ng-if="experimentForm.assumeAutocomplete.$touched">
+        <div ng-message="required">This is required.</div>
+      </div>
+    </md-autocomplete>
+  </div>
 
   <md-autocomplete
     flex required
@@ -62,35 +64,34 @@
     </div>
   </md-autocomplete>
 
-  <md-autocomplete
-    flex
-    md-input-name="successAutocomplete"
-    md-selected-item="success.selectedItem"
-    md-search-text-change="success.searchTextChange(success.searchText)"
-    md-search-text="success.searchText"
-    md-items="item in success.querySearch('success', success.searchText)"
-    md-item-text="item.display"
-    md-min-length="0"
-    md-floating-label="Success">
-    <md-item-template>
-      <span md-highlight-text="success.searchText">{{item.display}}</span>
-    </md-item-template>
-  </md-autocomplete>
+  <div layout-gt-sm="row">
+    <md-autocomplete flex
+                     md-input-name="successAutocomplete"
+                     md-selected-item="success.selectedItem"
+                     md-search-text-change="success.searchTextChange(success.searchText)"
+                     md-search-text="success.searchText"
+                     md-items="item in success.querySearch('success', success.searchText)"
+                     md-item-text="item.display"
+                     md-min-length="0"
+                     md-floating-label="Success">
+      <md-item-template>
+        <span md-highlight-text="success.searchText">{{item.display}}</span>
+      </md-item-template>
+    </md-autocomplete>
 
-  <md-autocomplete
-    flex
-    md-input-name="failureAutocomplete"
-    md-selected-item="failure.selectedItem"
-    md-search-text-change="failure.searchTextChange(failure.searchText)"
-    md-search-text="failure.searchText"
-    md-items="item in failure.querySearch('failure', failure.searchText)"
-    md-item-text="item.display"
-    md-min-length="0"
-    md-floating-label="Failure">
-    <md-item-template>
-      <span md-highlight-text="failure.searchText">{{item.display}}</span>
-    </md-item-template>
-  </md-autocomplete>
-
-  <md-button class="md-raised md-primary" ng-click="create()">Create</md-button>
+    <md-autocomplete flex
+                     md-input-name="failureAutocomplete"
+                     md-selected-item="failure.selectedItem"
+                     md-search-text-change="failure.searchTextChange(failure.searchText)"
+                     md-search-text="failure.searchText"
+                     md-items="item in failure.querySearch('failure', failure.searchText)"
+                     md-item-text="item.display"
+                     md-min-length="0"
+                     md-floating-label="Failure">
+      <md-item-template>
+        <span md-highlight-text="failure.searchText">{{item.display}}</span>
+      </md-item-template>
+    </md-autocomplete>
+  </div>
+  <md-button class="md-raised md-primary" type="submit">Create</md-button>
 </form>
