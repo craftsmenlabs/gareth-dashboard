@@ -14,6 +14,18 @@ angular.module('garethApp')
     $scope.baseline = {};
     $scope.baseline.querySearch = queryDefinitions;
 
+    $scope.assume = {};
+    $scope.assume.querySearch = queryDefinitions;
+
+    $scope.time = {};
+    $scope.time.querySearch = queryDefinitions;
+
+    $scope.success = {};
+    $scope.success.querySearch = queryDefinitions;
+
+    $scope.failure = {};
+    $scope.failure.querySearch = queryDefinitions;
+
     $scope.create = function () {
       console.log(JSON.stringify($scope.experiment));
       $http.post("http://localhost:8080/definitions", $scope.experiment

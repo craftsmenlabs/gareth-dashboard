@@ -26,34 +26,71 @@
     </div>
   </md-autocomplete>
 
+  <md-autocomplete
+    flex required
+    md-input-name="assumeAutocomplete"
+    md-selected-item="assume.selectedItem"
+    md-search-text-change="assume.searchTextChange(assume.searchText)"
+    md-search-text="assume.searchText"
+    md-items="item in assume.querySearch('assume', assume.searchText)"
+    md-item-text="item.display"
+    md-min-length="0"
+    md-floating-label="Assume">
+    <md-item-template>
+      <span md-highlight-text="assume.searchText">{{item.display}}</span>
+    </md-item-template>
+    <div ng-messages="experimentForm.assumeAutocomplete.$error" ng-if="experimentForm.assumeAutocomplete.$touched">
+      <div ng-message="required">This is required.</div>
+    </div>
+  </md-autocomplete>
 
-  <md-input-container class="md-block" required flex-gt-sm>
-    <label>Assume</label>
-    <input ng-model="experiment.assume_glueline">
-  </md-input-container>
+  <md-autocomplete
+    flex required
+    md-input-name="timeAutocomplete"
+    md-selected-item="time.selectedItem"
+    md-search-text-change="time.searchTextChange(time.searchText)"
+    md-search-text="time.searchText"
+    md-items="item in time.querySearch('time', time.searchText)"
+    md-item-text="item.display"
+    md-min-length="0"
+    md-floating-label="Time">
+    <md-item-template>
+      <span md-highlight-text="time.searchText">{{item.display}}</span>
+    </md-item-template>
+    <div ng-messages="experimentForm.timeAutocomplete.$error" ng-if="experimentForm.timeAutocomplete.$touched">
+      <div ng-message="required">This is required.</div>
+    </div>
+  </md-autocomplete>
 
-  <md-input-container class="md-block" required flex-gt-sm>
-    <label>Time</label>
-    <input ng-model="experiment.time_glueline">
-  </md-input-container>
+  <md-autocomplete
+    flex
+    md-input-name="successAutocomplete"
+    md-selected-item="success.selectedItem"
+    md-search-text-change="success.searchTextChange(success.searchText)"
+    md-search-text="success.searchText"
+    md-items="item in success.querySearch('success', success.searchText)"
+    md-item-text="item.display"
+    md-min-length="0"
+    md-floating-label="Success">
+    <md-item-template>
+      <span md-highlight-text="success.searchText">{{item.display}}</span>
+    </md-item-template>
+  </md-autocomplete>
 
-  <md-input-container class="md-block" flex-gt-sm>
-    <label>Success</label>
-    <input ng-model="experiment.success_glueline">
-  </md-input-container>
-
-  <md-input-container class="md-block" flex-gt-sm>
-    <label>Failure</label>
-    <input ng-model="experiment.failure_glueline">
-  </md-input-container>
+  <md-autocomplete
+    flex
+    md-input-name="failureAutocomplete"
+    md-selected-item="failure.selectedItem"
+    md-search-text-change="failure.searchTextChange(failure.searchText)"
+    md-search-text="failure.searchText"
+    md-items="item in failure.querySearch('failure', failure.searchText)"
+    md-item-text="item.display"
+    md-min-length="0"
+    md-floating-label="Failure">
+    <md-item-template>
+      <span md-highlight-text="failure.searchText">{{item.display}}</span>
+    </md-item-template>
+  </md-autocomplete>
 
   <md-button class="md-raised md-primary" ng-click="create()">Create</md-button>
 </form>
-
-
-<!--{-->
-<!--"":"has risen by 61 per cent",-->
-<!--"":"4 seconds",-->
-<!--"":"send cake to developers",-->
-<!--"":"Blame the suits"-->
-<!--}-->
