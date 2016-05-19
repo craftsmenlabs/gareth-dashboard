@@ -12,7 +12,7 @@
     height: 100%;
 }
 
-h3.chartHeader {
+.chartHeader {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);

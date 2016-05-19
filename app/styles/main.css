@@ -6,11 +6,11 @@ body {
   font-family: 'Raleway', sans-serif;
 }
 
-img#logo {
+#logo {
   width: 30%;
 }
 
-img#toolbarLogo {
+#toolbarLogo {
   width: 15%;
 }
 
@@ -172,7 +172,7 @@ tr.non_existent {
   background-color: #c6c6c6;
 }
 
-img.footer-image {
+.footer-image {
   display: block;
   height: 25%;
   width: 25%;
@@ -181,7 +181,7 @@ img.footer-image {
   margin-right: auto;
 }
 
-div.footer-image-right {
+.footer-image-right {
   width: 60%;
   display: block;
   float: left;
@@ -199,6 +199,6 @@ div.footer-image-right {
   color: #333E49;
 }
 
-table.experiments {
+.experiments {
   width: 80%;
 }
