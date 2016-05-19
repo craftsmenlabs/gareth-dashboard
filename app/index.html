@@ -9,6 +9,7 @@
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -16,73 +17,62 @@
   <link rel="stylesheet" href="styles/piechart.css">
   <!-- endbuild -->
 </head>
-<body ng-app="garethApp">
+<body ng-app="garethApp" ng-cloak>
 <!--[if lte IE 8]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your
   browser</a> to improve your experience.</p>
 <![endif]-->
 
 <!-- Add your site or application content here -->
-<div class="header">
-  <div class="navbar navbar-default" role="navigation">
-    <div class="container">
-      <div class="navbar-header">
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <a ng-href="#/about">
+      <img src="images/logo.png" alt="Gareth logo" id="logo"/>
+    </a>
+    <!--<md-button class="md-icon-button" aria-label="Favorite">-->
+    <!--<md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>-->
+    <!--</md-button>-->
+    <!--<md-button class="md-icon-button" aria-label="More">-->
+    <!--<md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>-->
+    <!--</md-button>-->
+  </div>
+</md-toolbar>
 
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
+<md-content>
+  <div class="container">
+    <div ng-view=""></div>
+  </div>
 
-        <a class="navbar-brand" href="#/">gareth</a>
-      </div>
+  <div class="footer">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer-image-right">
+          <ul>
+            <li class="horizontal" data-type="github">
+            </li>
+            <li class="horizontal">
+              <a href="https://github.com/craftsmenlabs/gareth-poc">GitHub</a>
+            </li>
+            <li class="horizontal" data-type="twitter">
+            </li>
+            <li class="horizontal">
+              <a href="https://twitter.com/hylke1982">hylke1982</a>
+            </li>
+            <li class="horizontal" data-type="twitter">
+            </li>
+            <li class="horizontal">
+              <a href="https://twitter.com/NielsTalens">NielsTalens</a>
+            </li>
+          </ul>
 
-      <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="#/">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#/">Contact</a></li>
-        </ul>
+        </div>
+        <div class="lean-part">
+          <img src="images/logo.png" class="footer-image" alt="Gareth Logo"/>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
-<div class="container">
-  <div ng-view=""></div>
-</div>
-
-<div class="footer">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="footer-image-right">
-        <ul>
-          <li class="horizontal" data-type="github">
-          </li>
-          <li class="horizontal">
-            <a href="https://github.com/craftsmenlabs/gareth-poc">GitHub</a>
-          </li>
-          <li class="horizontal" data-type="twitter">
-          </li>
-          <li class="horizontal">
-            <a href="https://twitter.com/hylke1982">hylke1982</a>
-          </li>
-          <li class="horizontal" data-type="twitter">
-          </li>
-          <li class="horizontal">
-            <a href="https://twitter.com/NielsTalens">NielsTalens</a>
-          </li>
-        </ul>
-
-      </div>
-      <div class="lean-part">
-        <img src="images/logo.png" class="footer-image" alt="Gareth Logo"/>
-      </div>
-    </div>
-  </div>
-</div>
+</md-content>
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
@@ -108,6 +98,9 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
