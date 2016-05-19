@@ -58,12 +58,9 @@ angular.module('garethApp')
     }
 
     function loadConfig() {
-      // $http.get('config.json').then(function (response) {
-      //     config = response.data;
-      //     init();
-      // });
-
+      // config = {'backendExperimentUrl': '/data/experiments.json'};
       config = {'backendExperimentUrl': 'http://localhost:8080/experiments'};
+
       init();
     }
 
