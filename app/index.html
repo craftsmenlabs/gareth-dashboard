@@ -8,7 +8,7 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -18,7 +18,8 @@
 </head>
 <body ng-app="garethApp">
 <!--[if lte IE 8]>
-<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your
+  browser</a> to improve your experience.</p>
 <![endif]-->
 
 <!-- Add your site or application content here -->
@@ -54,18 +55,43 @@
 </div>
 
 <div class="footer">
-  <div class="container">
-    <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="footer-image-right">
+        <ul>
+          <li class="horizontal" data-type="github">
+          </li>
+          <li class="horizontal">
+            <a href="https://github.com/craftsmenlabs/gareth-poc">GitHub</a>
+          </li>
+          <li class="horizontal" data-type="twitter">
+          </li>
+          <li class="horizontal">
+            <a href="https://twitter.com/hylke1982">hylke1982</a>
+          </li>
+          <li class="horizontal" data-type="twitter">
+          </li>
+          <li class="horizontal">
+            <a href="https://twitter.com/NielsTalens">NielsTalens</a>
+          </li>
+        </ul>
+
+      </div>
+      <div class="lean-part">
+        <img src="images/logo.png" class="footer-image" alt="Gareth Logo"/>
+      </div>
+    </div>
   </div>
 </div>
 
-
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
 <script>
-  !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-      (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-    r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-  }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  !function (A, n, g, u, l, a, r) {
+    A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+        (A[l].q = A[l].q || []).push(arguments)
+      }, A[l].l = +new Date, a = n.createElement(g),
+      r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+  }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
   ga('create', 'UA-XXXXX-X');
   ga('send', 'pageview');
