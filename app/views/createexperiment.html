@@ -8,47 +8,23 @@
     </div>
   </md-input-container>
 
-  <!--<md-input-container class="md-block" required flex-gt-sm>-->
-  <!--<label>Baseline</label>-->
-  <!--<input ng-model="experiment.baseline_glueline">-->
-  <!--</md-input-container>-->
-
-  <!--<md-autocomplete-->
-    <!--required-->
-    <!--md-input-name="baseline_glueline"-->
-    <!--md-selected-item="baseline.selectedItem"-->
-    <!--md-search-text="baseline.searchText"-->
-    <!--md-items="item in baseline.querySearch(baseline.searchText)"-->
-    <!--md-item-text="item.display"-->
-    <!--md-floating-label="Baseline">-->
-    <!--<md-item-template>-->
-      <!--<span md-highlight-text="baseline.searchText">{{item.display}}</span>-->
-    <!--</md-item-template>-->
-    <!--<div ng-messages="experimentForm.baseline_glueline.$error" ng-if="experimentForm.baseline_glueline.$touched">-->
-      <!--<div ng-message="required">This is required.</div>-->
-    <!--</div>-->
-  <!--</md-autocomplete>-->
-
-
-    <!--md-selected-item-change="baseline.selectedItemChange(item)"-->
   <md-autocomplete
+    flex required
+    md-input-name="baselineAutocomplete"
     md-selected-item="baseline.selectedItem"
     md-search-text-change="baseline.searchTextChange(baseline.searchText)"
     md-search-text="baseline.searchText"
     md-items="item in baseline.querySearch('baseline', baseline.searchText)"
     md-item-text="item.display"
     md-min-length="0"
-    placeholder="Baseline">
+    md-floating-label="Baseline">
     <md-item-template>
-      <span md-highlight-text="baseline.searchText" md-highlight-flags="^i">{{item.display}}</span>
+      <span md-highlight-text="baseline.searchText">{{item.display}}</span>
     </md-item-template>
-    <md-not-found>
-      No states matching "{{baseline.searchText}}" were found.
-      <!--<a ng-click="ctrl.newState(ctrl.searchText)">Create a new one!</a>-->
-    </md-not-found>
+    <div ng-messages="experimentForm.baselineAutocomplete.$error" ng-if="experimentForm.baselineAutocomplete.$touched">
+      <div ng-message="required">This is required.</div>
+    </div>
   </md-autocomplete>
-
-
 
 
   <md-input-container class="md-block" required flex-gt-sm>

@@ -11,28 +11,14 @@ angular.module('garethApp')
   .controller('CreateexperimentCtrl', function ($scope, $http, $q) {
     $scope.experiment = {};
 
+    $scope.baseline = {};
+    $scope.baseline.querySearch = queryDefinitions;
+
     $scope.create = function () {
       console.log(JSON.stringify($scope.experiment));
       $http.post("http://localhost:8080/definitions", $scope.experiment
       ).then(handleSuccess, handleError('Error executing command'));
     };
-
-    function handleSuccess(res) {
-      return res.data;
-    }
-
-    function handleError(error) {
-      return function () {
-        return {success: false, message: error};
-      };
-    }
-
-    $scope.baseline = {};
-    $scope.baseline.querySearch = queryDefinitions;
-
-    // md-selected-item="baseline.selectedItem"
-    // md-search-text="baseline.searchText"
-    // querySearch
 
     function queryDefinitions(type, query) {
       var deferred = $q.defer();
@@ -59,11 +45,20 @@ angular.module('garethApp')
         });
       }
 
-      _.debounce(deferredQueryDefinitions, 100, true)();
+      _.debounce(deferredQueryDefinitions, 0, true)();
 
       return deferred.promise;
     }
 
+    function handleSuccess(res) {
+      return res.data;
+    }
+
+    function handleError(error) {
+      return function () {
+        return {success: false, message: error};
+      };
+    }
 
   })
 ;
