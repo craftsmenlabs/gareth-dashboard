@@ -5,6 +5,7 @@
 * Git clone,
 * Open terminal and go to the cloned directory,
 * Type *NPM install*
+* If you do not have Bower installed run *npm install -g bower*
 * Type *bower install*
 
 After all is installed you can get the server up and running by typing *grunt serve*
