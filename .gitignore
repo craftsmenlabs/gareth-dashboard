@@ -1,5 +1,10 @@
-node_modules/
 .idea/
 *.iml
-target/
 .DS_Store
+/node_modules
+/dist
+/.tmp
+/.sass-cache
+/bower_components
+*.class
+**/.tmp
