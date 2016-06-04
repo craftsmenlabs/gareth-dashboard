@@ -8,7 +8,7 @@
  * Controller of the garethApp
  */
 angular.module('garethApp')
-  .controller('CreateexperimentCtrl', function ($scope, $http, $q) {
+  .controller('CreateexperimentCtrl', function ($scope, $http, $q, $mdDialog) {
     $scope.experiment = {};
 
     $scope.baseline = {};
@@ -36,7 +36,19 @@ angular.module('garethApp')
 
       console.log(JSON.stringify($scope.experiment));
       $http.post("http://localhost:8080/definitions", $scope.experiment
-      ).then(handleSuccess, handleError('Error executing command'));
+      ).then(handleSuccess, function () {
+        var alert = $mdDialog.alert({
+          title: "Error creating experiment",
+          textContent: "All fields must match an existing glue line in Gareth.",
+          ok: 'Close'
+        });
+        $mdDialog
+          .show(alert)
+          .finally(function ()
+          {
+            alert = undefined;
+          });
+      });
     };
 
     function queryDefinitions(type, query) {
