@@ -20,6 +20,17 @@ docker run -d -p 8765:8765 --env GARETH_BACKEND_URL=http://gareth.backend.com cr
 ## Sample data
 In the public/data/experimentruns are a couple of examples of runs which contain different statuses: error, finished, open, running and non_existent. You can play with those to see different outcomes in the dashboard.
 
+In order to see the local examples you need to switch the loadConfig to /data/experiments.json in  gareth-dashboard/app/scripts/controllers/main.js
+
+```
+function loadConfig() {
+  //config = {'backendExperimentUrl': '/data/experiments.json'};
+  config = {'backendExperimentUrl': 'http://localhost:8080/experiments'};
+
+  init();
+}
+```
+
 ## Testing
 
 Running `grunt test` will run the unit tests with karma.
