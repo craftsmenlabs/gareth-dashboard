@@ -8,7 +8,7 @@
  * Controller of the garethApp
  */
 angular.module('garethApp')
-  .controller('CreateexperimentCtrl', function ($scope, $http, $q, $mdDialog) {
+  .controller('CreateexperimentCtrl', function ($scope, $http, $q, $mdDialog, definitionsService) {
     $scope.experiment = {};
 
     $scope.baseline = {};
@@ -35,6 +35,8 @@ angular.module('garethApp')
       $scope.experiment.failure_glueline = $scope.failure.searchText;
 
       console.log(JSON.stringify($scope.experiment));
+
+
       $http.post("http://localhost:8080/definitions/", $scope.experiment
       ).then(handleSuccess, function () {
         var alert = $mdDialog.alert({
@@ -44,8 +46,7 @@ angular.module('garethApp')
         });
         $mdDialog
           .show(alert)
-          .finally(function ()
-          {
+          .finally(function () {
             alert = undefined;
           });
       });
@@ -55,25 +56,29 @@ angular.module('garethApp')
       var deferred = $q.defer();
 
       function deferredQueryDefinitions() {
-        if (query && query.length <= 0) {
+        if (!query) {
           return [];
         }
 
-        $http.get("http://localhost:8080/definitions/" + type + "/" + query).then(handleSuccess, handleError('Error executing command')).then(function (definition) {
-          console.log(JSON.stringify(definition));
-          var results = [];
+        definitionsService.getDefinitions(type, query).then(function (res) {
+            console.log(JSON.stringify(res));
+            var results = [];
 
-          if (definition.suggestions && definition.suggestions.length > 0) {
-            results = definition.suggestions.map(function (suggestion) {
-              return {
-                value: suggestion,
-                display: suggestion
-              };
-            });
+            if (res.success) {
+              var definition = res.data;
+              if (definition.suggestions && definition.suggestions.length > 0) {
+                results = definition.suggestions.map(function (suggestion) {
+                  return {
+                    value: suggestion,
+                    display: suggestion
+                  };
+                });
+              }
+            }
+
+            deferred.resolve(results);
           }
-
-          deferred.resolve(results);
-        });
+        );
       }
 
       _.debounce(deferredQueryDefinitions, 0, true)();
@@ -84,12 +89,5 @@ angular.module('garethApp')
     function handleSuccess(res) {
       return res.data;
     }
-
-    function handleError(error) {
-      return function () {
-        return {success: false, message: error};
-      };
-    }
-
   })
 ;
