@@ -27,28 +27,14 @@ angular.module('garethApp')
     $scope.failure.querySearch = queryDefinitions;
 
     $scope.create = function () {
-
       $scope.experiment.baseline_glueline = $scope.baseline.searchText;
       $scope.experiment.assume_glueline = $scope.assume.searchText;
       $scope.experiment.time_glueline = $scope.time.searchText;
       $scope.experiment.success_glueline = $scope.success.searchText;
       $scope.experiment.failure_glueline = $scope.failure.searchText;
 
-      console.log(JSON.stringify($scope.experiment));
-
-
-      $http.post("http://localhost:8080/definitions/", $scope.experiment
-      ).then(handleSuccess, function () {
-        var alert = $mdDialog.alert({
-          title: "Error creating experiment",
-          textContent: "All fields must match an existing glue line in Gareth.",
-          ok: 'Close'
-        });
-        $mdDialog
-          .show(alert)
-          .finally(function () {
-            alert = undefined;
-          });
+      definitionsService.createExperiment($scope.experiment).then(handleSuccess, function () {
+        showErrorDialog();
       });
     };
 
@@ -61,21 +47,7 @@ angular.module('garethApp')
         }
 
         definitionsService.getDefinitions(type, query).then(function (res) {
-            console.log(JSON.stringify(res));
-            var results = [];
-
-            if (res.success) {
-              var definition = res.data;
-              if (definition.suggestions && definition.suggestions.length > 0) {
-                results = definition.suggestions.map(function (suggestion) {
-                  return {
-                    value: suggestion,
-                    display: suggestion
-                  };
-                });
-              }
-            }
-
+            var results = parseResults(res);
             deferred.resolve(results);
           }
         );
@@ -84,6 +56,36 @@ angular.module('garethApp')
       _.debounce(deferredQueryDefinitions, 0, true)();
 
       return deferred.promise;
+    }
+
+    function showErrorDialog() {
+      var alert = $mdDialog.alert({
+        title: "Error creating experiment",
+        textContent: "All fields must match an existing glue line in Gareth.",
+        ok: 'Close'
+      });
+      $mdDialog
+        .show(alert)
+        .finally(function () {
+          alert = undefined;
+        });
+    }
+
+    function parseResults(res) {
+      var results = [];
+
+      if (res.success) {
+        var definition = res.data;
+        if (definition.suggestions && definition.suggestions.length > 0) {
+          results = definition.suggestions.map(function (suggestion) {
+            return {
+              value: suggestion,
+              display: suggestion
+            };
+          });
+        }
+      }
+      return results;
     }
 
     function handleSuccess(res) {
