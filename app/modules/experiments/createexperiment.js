@@ -35,7 +35,7 @@ angular.module('garethApp')
       $scope.experiment.failure_glueline = $scope.failure.searchText;
 
       console.log(JSON.stringify($scope.experiment));
-      $http.post("http://localhost:8080/definitions", $scope.experiment
+      $http.post("http://localhost:8080/definitions/", $scope.experiment
       ).then(handleSuccess, function () {
         var alert = $mdDialog.alert({
           title: "Error creating experiment",

@@ -11,8 +11,8 @@
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css"/>
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -87,19 +87,6 @@
   </div>
 </md-content>
 
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-<script>
-  !function (A, n, g, u, l, a, r) {
-    A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
-        (A[l].q = A[l].q || []).push(arguments)
-      }, A[l].l = +new Date, a = n.createElement(g),
-      r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
-  }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-  ga('create', 'UA-XXXXX-X');
-  ga('send', 'pageview');
-</script>
-
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -119,12 +106,20 @@
 <!-- endbuild -->
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
-<script src="scripts/app.js"></script>
-<script src="scripts/controllers/main.js"></script>
-<script src="scripts/controllers/about.js"></script>
-<script src="scripts/lib/piechart.js"></script>
-<script src="scripts/controllers/createexperiment.js"></script>
-<script src="scripts/services/createExperimentService.js"></script>
+<script src="config/app.js"></script>
+<script src="config/routes.js"></script>
+<script src="config/theming.js"></script>
+
+<script src="modules/home/main.js"></script>
+<script src="modules/home/routes.js"></script>
+<script src="lib/piechart.js"></script>
+
+<script src="modules/about/about.js"></script>
+<script src="modules/about/routes.js"></script>
+
+<script src="modules/experiments/createexperiment.js"></script>
+<script src="modules/experiments/routes.js"></script>
+
 <!-- endbuild -->
 </body>
 </html>
