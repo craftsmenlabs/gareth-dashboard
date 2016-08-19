@@ -7,23 +7,17 @@
         Statistics
       </div>
 
-      <div class="row" style="height: 300px;">
+      <div class="row" style="height: 500px;">
         <div class="col-md-3 chartContainer">
-          <h3 class="chartHeader">Experiments</h3>
-          <div id="experimentChart" class="chart"></div>
-          <div class="chartFooter">
-            <span ng-if="failedExperiments == 0">All {{allExperiments}} experiments successful.</span>
-            <span ng-if="failedExperiments != 0">{{failedExperiments}} of {{allExperiments}} experiments failed.</span>
-          </div>
+				<canvas id="bars" width="500" height="500"></canvas>
+			<div class="chartFooter">
+				<span ng-if="failedExperiments == 0">All {{allExperiments}} experiments successful.</span>
+				<span ng-if="failedExperiments != 0">{{failedExperiments}} of {{allExperiments}} experiments failed.</span>
+				<span ng-if="failureRuns == 0">All {{allRuns}} runs successful.</span>
+				<span ng-if="failureRuns != 0">{{failureRuns}} of {{allRuns}} runs failed.</span>
+			</div>
         </div>
-        <div class="col-md-3 chartContainer">
-          <h3 class="chartHeader">Runs</h3>
-          <div id="runChart" class="chart"></div>
-          <div class="chartFooter">
-            <span ng-if="failureRuns == 0">All {{allRuns}} runs successful.</span>
-            <span ng-if="failureRuns != 0">{{failureRuns}} of {{allRuns}} runs failed.</span>
-          </div>
-        </div>
+
         <div class="col-md-3">
           <h6 ng-if="failedExperiments != 0">{{allExperiments}}</h6>
           <h6 ng-if="failedExperiments == 0">0</h6>
@@ -35,9 +29,10 @@
           <h6 class="error" ng-if="failedExperiments == 0">0</h6>
           <p align="center">experiments failing.</p>
         </div>
+		
+
       </div>
-
-
+		
     </div>
     <!-- END PAGE CONTENT-->
   </div>

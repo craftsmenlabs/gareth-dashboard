@@ -20,7 +20,8 @@
         },
         "href": "http://localhost:8080/experiments-rerun/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bA"
       }
-    ]
+    ],
+	"value" : 10
   },
   {
     "hash": "a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888be",
@@ -43,7 +44,8 @@
         },
         "href": "http://localhost:8080/experiments-rerun/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888be"
       }
-    ]
+    ],
+	"value" : 10
   },
   {
     "hash": "a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bB",
@@ -66,11 +68,12 @@
         },
         "href": "http://localhost:8080/experiments-rerun/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bB"
       }
-    ]
+    ],
+	"value" : 15
   },
   {
     "hash": "a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bC",
-    "experiment_name": "As above (more baselines and assumptions for one experiment)",
+    "experiment_name": "Again, as above (more baselines and assumptions for one experiment)",
     "baseline_glueline": "Get the number of discounted rooms booked in the last 6 months.",
     "assume_glueline": "After 6 months, bookings of discounted rooms have increased by 80%.",
     "time_glueline": "6 months",
@@ -89,6 +92,7 @@
         },
         "href": "http://localhost:8080/experiments-rerun/a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bC"
       }
-    ]
+    ],
+	"value" : 10
   }
 ]
