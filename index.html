@@ -1,0 +1,131 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>Gareth</title>
+  <meta name="author" content="Craftsmenlabs">
+  <meta name="description" content="Continuous Validation">
+
+  <meta name="viewport" content="width=device-width">
+  <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  <!-- build:css(.) styles/vendor.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+  <!-- endbower -->
+  <!-- endbuild -->
+  <!-- build:css(.tmp) styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/piechart.css">
+  <!-- endbuild -->
+</head>
+<body ng-app="garethApp" ng-cloak>
+<!--[if lte IE 8]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your
+  browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<md-toolbar>
+  <div class="md-toolbar-tools">
+    <a ng-href="#/">
+      <img src="images/logo.png" alt="Gareth logo" id="logo"/>
+    </a>
+    <span flex></span>
+    <md-button class="md-icon-button" aria-label="Dashboard" href="#/">
+      <span class="glyphicon glyphicon-dashboard"></span>
+    </md-button>
+    <md-button class="md-icon-button" aria-label="Running">
+      <span class="glyphicon glyphicon-fire"></span>
+    </md-button>
+    <md-button class="md-icon-button" aria-label="Stats">
+      <span class="glyphicon glyphicon-stats"></span>
+    </md-button>
+    <md-button class="md-icon-button" aria-label="New" href="#/createExperiment">
+      <span class="glyphicon glyphicon-plus"></span>
+    </md-button>
+    <md-button class="md-icon-button" aria-label="Settings" href="#/about">
+      <span class="glyphicon glyphicon-cog"></span>
+    </md-button>
+  </div>
+</md-toolbar>
+
+<md-content>
+  <div class="container">
+    <div ng-view=""></div>
+  </div>
+
+  <div class="footer">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer-image-right">
+          <ul>
+            <li class="horizontal" data-type="github">
+            </li>
+            <li class="horizontal">
+              <a href="https://github.com/craftsmenlabs/gareth-poc">GitHub</a>
+            </li>
+            <li class="horizontal" data-type="twitter">
+            </li>
+            <li class="horizontal">
+              <a href="https://twitter.com/hylke1982">hylke1982</a>
+            </li>
+            <li class="horizontal" data-type="twitter">
+            </li>
+            <li class="horizontal">
+              <a href="https://twitter.com/NielsTalens">NielsTalens</a>
+            </li>
+          </ul>
+
+        </div>
+        <div class="lean-part">
+          <img src="images/logo.png" class="footer-image" alt="Gareth Logo"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</md-content>
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/lodash/lodash.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-messages/angular-messages.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-aria/angular-aria.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<script src="config/app.js"></script>
+<script src="config/constants.js"></script>
+<script src="config/routes.js"></script>
+<script src="config/theming.js"></script>
+
+<script src="modules/home/main.js"></script>
+<script src="modules/home/routes.js"></script>
+<script src="lib/piechart.js"></script>
+
+<script src="lib/Chart.min.js"></script>
+<script src="lib/angular-chart.js"></script>
+
+<script src="modules/about/about.js"></script>
+<script src="modules/about/routes.js"></script>
+
+<script src="modules/experiments/createexperiment.js"></script>
+<script src="modules/experiments/routes.js"></script>
+
+<script src="services/definitionsService.js"></script>
+
+<!-- endbuild -->
+</body>
+</html>
