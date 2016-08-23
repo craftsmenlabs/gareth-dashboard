@@ -5,7 +5,7 @@ services:
 
 
 before_install:
-  - docker login -e="$DOCKER_EMAIL" -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD2"
+  - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD2"
   - docker build -t craftsmenlabs/gareth_dashboard .
 
 script:
