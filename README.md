@@ -35,6 +35,17 @@ function loadConfig() {
 
 Running `grunt test` will run the unit tests with karma.
 
+---
+
+## Contribute
+
+You can contribute to this repository the by following these steps.
+
+- Fork this repository
+- Create a branch
+- Do your coding
+- Create a pull request to integrate the branch
+
 # Licences
 
 ```
