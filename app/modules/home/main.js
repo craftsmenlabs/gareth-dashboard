@@ -7,14 +7,14 @@
  * # MainCtrl
  * Controller of the garethApp
  */
- 
+
 
 angular.module('garethApp')
   .controller('MainCtrl', function ($scope, $http, $q) {
 
 	var newChart = angular.module('myModule', ['chart.js']);
 
-  
+
 	var config = {};
     $scope.allRuns = 0;
     $scope.failureRuns = 0;
@@ -42,21 +42,21 @@ angular.module('garethApp')
         throw new Error("Needs experiment backend URL");
       }
     }
-	
+
 	function drawCombinedChart(elementToDrawOn) {
 		var successes = [];
 		var failures = [];
 		var sums = [];
-		
+
 		var keys = Object.keys($scope.experimentData);
 
 		// Here we check for the number of successes and failures per day.
-		for (var i=0; i<keys.length; i++) { 
+		for (var i=0; i<keys.length; i++) {
 			successes.push($scope.experimentData[keys[i]].succeeded);
 			failures.push(-$scope.experimentData[keys[i]].failed);
 			sums.push($scope.experimentData[keys[i]].succeeded - $scope.experimentData[keys[i]].failed);
 		}
-		
+
 		var ctx = document.getElementById(elementToDrawOn);
 		var myChart = new Chart(ctx, {
 			type: 'bar',
@@ -119,7 +119,7 @@ angular.module('garethApp')
 						},
 						labels: {
 							show:true,
-							
+
 						}
 					}]
 				}
@@ -134,7 +134,7 @@ angular.module('garethApp')
 		createExperimentData(experiment, responses[i].data);
       });
     }
-	
+
 	/* For a given date, get the ISO week number
 	 *
 	 * Based on information at:
@@ -165,10 +165,10 @@ angular.module('garethApp')
 		// Return array of year and week number
 		return weekNo;
 	}
-	
-	
 
-	// Creates a map which uses week as key. 
+
+
+	// Creates a map which uses week as key.
 	// succeeded = value of experiment * number of runs successful
 	// failed = value of experiment * number of runs failed
 	// sum = succeeded - failed
@@ -181,7 +181,7 @@ angular.module('garethApp')
 			var week = "week " + getWeekNumber(date);
 			var success = er.success_execution ? true : false;
 			//console.log('date: ' + date + experiment.experiment_name);
-			
+
 			// Check if week is already in the map.
 			if (week in $scope.experimentData) {
 				if (success) {
@@ -191,18 +191,18 @@ angular.module('garethApp')
 				else {
 					$scope.experimentData[week].failed += value;
 					$scope.experimentData[week].sum -= value;
-				}				
+				}
 			} else {
 				$scope.experimentData[week] = { succeeded: success ? value : 0, failed: success ? 0 : value, sum : success ? value : -value };
 			}
 
 		});
-		
+
 		console.log($scope.experimentData);
 		//console.log(Object.keys($scope.experimentData));
 
 	}
-	
+
     function parseRunsForExperiment(experiment, experimentRuns) {
       if (experimentRuns.length > 0) {
         var experimentCopy = angular.copy(experiment);
@@ -218,7 +218,7 @@ angular.module('garethApp')
 
     function loadConfig() {
       config = {'backendExperimentUrl': '/data/experiments.json'};
-      //config = {'backendExperimentUrl': 'http://localhost:8080/experiments'};
+      // config = {'backendExperimentUrl': 'http://localhost:8080/experiments'};
 
       init();
     }

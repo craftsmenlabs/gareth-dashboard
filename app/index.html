@@ -27,35 +27,29 @@
 <![endif]-->
 
 <!-- Add your site or application content here -->
-<md-toolbar>
-  <div class="md-toolbar-tools">
-    <a ng-href="#/">
-      <img src="images/logo.png" alt="Gareth logo" id="logo"/>
-    </a>
-    <span flex></span>
-    <md-button class="md-icon-button" aria-label="Dashboard" href="#/">
-      <span class="glyphicon glyphicon-dashboard"></span>
-    </md-button>
-    <md-button class="md-icon-button" aria-label="Running">
-      <span class="glyphicon glyphicon-fire"></span>
-    </md-button>
-    <md-button class="md-icon-button" aria-label="Stats">
-      <span class="glyphicon glyphicon-stats"></span>
-    </md-button>
-    <md-button class="md-icon-button" aria-label="New" href="#/createExperiment">
-      <span class="glyphicon glyphicon-plus"></span>
-    </md-button>
-    <md-button class="md-icon-button" aria-label="Settings" href="#/about">
-      <span class="glyphicon glyphicon-cog"></span>
-    </md-button>
-  </div>
-</md-toolbar>
+<header>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <a ng-href="#/">
+        <img src="images/logo.png" alt="Gareth logo" id="logo"/>
+      </a>
+      <span flex></span>
+      <md-button class="md-icon-button" aria-label="New" href="#/createExperiment">
+        <span class="glyphicon glyphicon-plus"></span>
+      </md-button>
+    </div>
+  </md-toolbar>
+</header>
 
-<md-content>
-  <div class="container">
-    <div ng-view=""></div>
-  </div>
+<section>
+  <md-content>
+    <div class="container">
+      <div ng-view=""></div>
+    </div>
+  </md-content>
+</section>
 
+<footer>
   <div class="footer">
     <div class="row">
       <div class="col-md-12">
@@ -64,17 +58,7 @@
             <li class="horizontal" data-type="github">
             </li>
             <li class="horizontal">
-              <a href="https://github.com/craftsmenlabs/gareth-poc">GitHub</a>
-            </li>
-            <li class="horizontal" data-type="twitter">
-            </li>
-            <li class="horizontal">
-              <a href="https://twitter.com/hylke1982">hylke1982</a>
-            </li>
-            <li class="horizontal" data-type="twitter">
-            </li>
-            <li class="horizontal">
-              <a href="https://twitter.com/NielsTalens">NielsTalens</a>
+              <a href="https://github.com/search?q=org%3Acraftsmenlabs+gareth">GitHub</a>
             </li>
           </ul>
 
@@ -85,7 +69,7 @@
       </div>
     </div>
   </div>
-</md-content>
+</footer>
 
 <!-- build:js(.) scripts/vendor.js -->
 <!-- bower:js -->
