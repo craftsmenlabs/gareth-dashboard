@@ -62,76 +62,71 @@
         <div class="bg-white">
           <div ng-app id="ng-app">
             <div ng-repeat="experiment in experiments">
-              <div class="panel-heading">
-                <table class="table-condensed experiments">
-                  <thead>
-                  <tr>
+			  <div class="panel-heading" ng:if="experiment.assume_execution != null">
+				<table class="table-condensed experiments">
+				  <thead>
+				  <tr>
 
-                    <th width="10%"><a ng-click="rerun(experiment._links[1].href)"><h3><span
-                      class="glyphicon glyphicon-refresh"></span></h3></a></th>
-                    <th width="80%"><a href="" class="collapsed" ng-click="collapsed=!collapsed"><h3>
-                      {{experiment.experiment_name}}</h3></a></th>
-                    <th width="10%"><p class="{{experiment.assume_state}}"><span
-                      class="glyphicon glyphicon-dashboard"></span></p></th>
-                  </tr>
-                  </thead>
-                </table>
-              </div>
+					<th width="10%"><a ng-click="rerun(experiment._links[1].href)"><h3><span
+					  class="glyphicon glyphicon-refresh"></span></h3></a></th>
+					<th width="80%">
+					<a ng-click="showExperiment(experiment)" href="javascript:void(0);">
+					<h3>
+					  {{experiment.experiment_name}}</h3></a></th>
+					<th width="10%"><p class="{{experiment.assume_state}}"><span
+					  class="glyphicon glyphicon-dashboard"></span></p></th>
+				  </tr>
+				  </thead>
+				</table>
+			  </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- END THE TABLE-->
 
-              <div ng-show="collapsed">
-                <table class="table">
-                  <thead>
-                  <tr>
-                    <th colspan="2"></th>
-                    <th>Execution date/time</th>
-                    <th>Execution status</th>
-                  </tr>
-                  </thead>
+<md-divider md-inset></md-divider>
 
-                  <tbody>
+<!-- BEGIN THE TABLE-->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="h3">
+        <span class="glyphicon glyphicon-fire"></span>
+        New or Pending experiments
+      </div>
 
-                  <tr>
-                    <th width="10%">Baseline</th>
-                    <th width="50%">{{experiment.baseline_glueline}}
-                    </td>
-                    <th width="30%">{{experiment.baseline_execution | date:'medium'}}</th>
-                    <th width="10%"><p class="{{experiment.baseline_state}}"><span
-                      class="glyphicon glyphicon-download-alt"></span></p></th>
-                  </tr>
+      <div class="tools">
+        <a href="javascript:;" class="collapse">
+        </a>
+      </div>
+    </div>
 
-                  <tr>
-                    <th>Assumption</th>
-                    <td>{{experiment.assume_glueline}}</td>
-                    <td>{{experiment.assume_execution | date:'medium'}}</td>
-                    <td><p class="{{experiment.assume_state}}"><span
-                      class="glyphicon glyphicon-question-sign"></span></p></td>
-                  </tr>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="bg-white">
+          <div ng-app id="ng-app">
+            <div ng-repeat="experiment in experiments">
+			  <div class="panel-heading" ng:if="experiment.assume_execution == null">
+				<table class="table-condensed experiments">
+				  <thead>
+				  <tr>
 
-                  <tr>
-                    <th>Time</th>
-                    <td colspan="3">{{experiment.time_glueline}}</td>
-                  </tr>
-
-                  <tr>
-                    <th>Success</th>
-                    <td>{{experiment.success_glueline}}</td>
-                    <td>{{experiment.success_execution | date:'medium'}}</td>
-                    <td><p class="{{experiment.success_state}}"><span
-                      class="glyphicon glyphicon-ok-sign"></span></p></td>
-                  </tr>
-
-                  <tr>
-                    <th>Failure</th>
-                    <td>{{experiment.failure_glueline}}</td>
-                    <td>{{experiment.failure_execution | date:'medium'}}</td>
-                    <td><p class="{{experiment.failure_state}}"><span
-                      class="glyphicon glyphicon-exclamation-sign"></span></p></td>
-                  </tr>
-
-                  </tbody>
-                </table>
-              </div>
-
+					<th width="10%"><a ng-click="rerun(experiment._links[1].href)"><h3><span
+					  class="glyphicon glyphicon-refresh"></span></h3></a></th>
+					<th width="80%">
+					<a ng-click="showExperiment(experiment)" href="javascript:void(0);">
+					<h3>
+					  {{experiment.experiment_name}}</h3></a></th>
+					<th width="10%"><p class="{{experiment.assume_state}}"><span
+					  class="glyphicon glyphicon-dashboard"></span></p></th>
+				  </tr>
+				  </thead>
+				</table>
+			  </div>
             </div>
           </div>
         </div>
