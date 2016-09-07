@@ -97,7 +97,7 @@
   },
   {
     "hash": "a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bD",
-    "experiment_name": "Totally new experiment",
+    "experiment_name": "Pending experiment",
     "baseline_glueline": "Measure the temperature for one year",
     "assume_glueline": "After burning 500 tires per day for a year, temperature should have increased by 3 degrees",
     "time_glueline": "12 months",
