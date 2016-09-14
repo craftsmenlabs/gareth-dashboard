@@ -10,7 +10,7 @@
 
 
 angular.module('garethApp')
-  .controller('MainCtrl', function ($scope, $http, $q) {
+  .controller('MainCtrl', function ($rootScope, $scope, $http, $q, $location) {
 
 	var newChart = angular.module('myModule', ['chart.js']);
 
@@ -21,6 +21,12 @@ angular.module('garethApp')
     $scope.failedExperiments = 0;
     $scope.allExperiments = 0;
 	$scope.experimentData = {};
+	$scope.experimentToShow = null;
+
+	$scope.showExperiment = function(experiment) {
+		$rootScope.experimentToShow = experiment;
+		$location.path("/showExperiment");
+	};
 
     function init() {
       if (config.backendExperimentUrl) {
@@ -218,7 +224,7 @@ angular.module('garethApp')
 
     function loadConfig() {
       config = {'backendExperimentUrl': '/data/experiments.json'};
-      // config = {'backendExperimentUrl': 'http://localhost:8080/experiments'};
+      //config = {'backendExperimentUrl': 'http://localhost:8080/experiments'};
 
       init();
     }
