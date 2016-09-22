@@ -1,13 +1,13 @@
 [
   {
     "hash": "a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bA",
-    "experiment_name": "By giving players the option to invite friends semi-automatically the number of players will increase.",
-    "baseline_glueline": "Get the current amount players.",
-    "assume_glueline": "There will be a 10% increase in new players.",
-    "time_glueline": "1 month.",
-    "success_glueline": "Send cake to the whole team with congratulations.",
-    "failure_glueline": "Push message to Product Owner.",
-    "_links": [
+    "experimentName": "By giving players the option to invite friends semi-automatically the number of players will increase.",
+    "baselineGlueLine": "Get the current amount players.",
+    "assumeGlueLine": "There will be a 10% increase in new players.",
+    "timeGlueLine": "1 month.",
+    "successGlueLine": "Send cake to the whole team with congratulations.",
+    "failureGlueLine": "Push message to Product Owner.",
+    "links": [
       {
         "params": {
           "rel": "experimentruns"
@@ -25,13 +25,13 @@
   },
   {
     "hash": "a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888be",
-    "experiment_name": "I want to validate that by showing the discounted rooms first, there will be an increase in booked rooms..",
-    "baseline_glueline": "Get the current number of discounted rooms booked per week.",
-    "assume_glueline": "There will be an increase in bookings for discounted rooms of 25 per week in the first month.",
-    "time_glueline": "1 minute",
-    "success_glueline": "Send email to the whole team with congratulations.",
-    "failure_glueline": "Send an email to the Product Owner.",
-    "_links": [
+    "experimentName": "I want to validate that by showing the discounted rooms first, there will be an increase in booked rooms..",
+    "baselineGlueLine": "Get the current number of discounted rooms booked per week.",
+    "assumeGlueLine": "There will be an increase in bookings for discounted rooms of 25 per week in the first month.",
+    "timeGlueLine": "1 minute",
+    "successGlueLine": "Send email to the whole team with congratulations.",
+    "failureGlueLine": "Send an email to the Product Owner.",
+    "links": [
       {
         "params": {
           "rel": "experimentruns"
@@ -49,13 +49,13 @@
   },
   {
     "hash": "a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bB",
-    "experiment_name": "As above (more baselines and assumptions for one experiment)",
-    "baseline_glueline": "Get the number of discounted rooms booked in the last 6 months.",
-    "assume_glueline": "After 6 months, bookings of discounted rooms have increased by 80%.",
-    "time_glueline": "6 months",
-    "success_glueline": "Send reminder to buy cake for the developers.",
-    "failure_glueline": "Create an investigative story on the backlog.",
-    "_links": [
+    "experimentName": "As above (more baselines and assumptions for one experiment)",
+    "baselineGlueLine": "Get the number of discounted rooms booked in the last 6 months.",
+    "assumeGlueLine": "After 6 months, bookings of discounted rooms have increased by 80%.",
+    "timeGlueLine": "6 months",
+    "successGlueLine": "Send reminder to buy cake for the developers.",
+    "failureGlueLine": "Create an investigative story on the backlog.",
+    "links": [
       {
         "params": {
           "rel": "experimentruns"
@@ -73,13 +73,13 @@
   },
   {
     "hash": "a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bC",
-    "experiment_name": "Again, as above (more baselines and assumptions for one experiment)",
-    "baseline_glueline": "Get the number of discounted rooms booked in the last 6 months.",
-    "assume_glueline": "After 6 months, bookings of discounted rooms have increased by 80%.",
-    "time_glueline": "6 months",
-    "success_glueline": "Send reminder to buy cake for the developers.",
-    "failure_glueline": "Create an investigative story on the backlog.",
-    "_links": [
+    "experimentName": "Again, as above (more baselines and assumptions for one experiment)",
+    "baselineGlueLine": "Get the number of discounted rooms booked in the last 6 months.",
+    "assumeGlueLine": "After 6 months, bookings of discounted rooms have increased by 80%.",
+    "timeGlueLine": "6 months",
+    "successGlueLine": "Send reminder to buy cake for the developers.",
+    "failureGlueLine": "Create an investigative story on the backlog.",
+    "links": [
       {
         "params": {
           "rel": "experimentruns"
@@ -97,13 +97,13 @@
   },
   {
     "hash": "a231412f32c2f6403ab5a59ab9717399f64788a7ba8391107710eb14104888bD",
-    "experiment_name": "Pending experiment",
-    "baseline_glueline": "Measure the temperature for one year",
-    "assume_glueline": "After burning 500 tires per day for a year, temperature should have increased by 3 degrees",
-    "time_glueline": "12 months",
-    "success_glueline": "Enjoy the summer.",
-    "failure_glueline": "Get more tires.",
-    "_links": [
+    "experimentName": "Pending experiment",
+    "baselineGlueLine": "Measure the temperature for one year",
+    "assumeGlueLine": "After burning 500 tires per day for a year, temperature should have increased by 3 degrees",
+    "timeGlueLine": "12 months",
+    "successGlueLine": "Enjoy the summer.",
+    "failureGlueLine": "Get more tires.",
+    "links": [
       {
         "params": {
           "rel": "experimentruns"

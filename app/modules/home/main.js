@@ -34,14 +34,14 @@ angular.module('garethApp')
           $scope.experiments = [];
           //an http.get needs to be done for each experiment. The responses are batched
           var promises = [];
-          data.forEach(function (experiment, i) {
-            promises.push($http.get(experiment._links[0].href))
-          });
+
+			data.forEach(function (experiment, i) {
+                promises.push($http.get(experiment.links[0].href))
+            });
           $q.all(promises).then(function (responses) {
             processExperimentRunResults(data, responses);
             $scope.allExperiments = $scope.experiments.length;
 			drawCombinedChart('bars');
-
           });
         });
       } else {
@@ -181,12 +181,12 @@ angular.module('garethApp')
 	function createExperimentData(experiment, experimentRuns) {
 		var value = experiment.value;
 
-		experimentRuns.forEach(function (er) {
+        experimentRuns.forEach(function (er) {
 			// What is the date of this run?
-			var date = er.success_execution ? er.success_execution : er.failure_execution;
+			var date = er.successExecution ? er.successExecution : er.failureExecution;
 			var week = "week " + getWeekNumber(date);
-			var success = er.success_execution ? true : false;
-			//console.log('date: ' + date + experiment.experiment_name);
+			var success = er.successExecution ? true : false;
+			//console.log('date: ' + date + experiment.experimentName);
 
 			// Check if week is already in the map.
 			if (week in $scope.experimentData) {
@@ -213,18 +213,19 @@ angular.module('garethApp')
       if (experimentRuns.length > 0) {
         var experimentCopy = angular.copy(experiment);
         var lastRun = experimentRuns[experimentRuns.length - 1];
-        $scope.failedExperiments += (lastRun.failure_execution ? 1 : 0);
+        $scope.failedExperiments += (lastRun.failureExecution ? 1 : 0);
         $scope.experiments.push(angular.merge(experimentCopy, lastRun));
       }
       experimentRuns.forEach(function (er) {
         $scope.allRuns = $scope.allRuns + 1;
-        $scope.failureRuns += (er.failure_execution ? 1 : 0);
+        $scope.failureRuns += (er.failureExecution ? 1 : 0);
       });
     }
 
     function loadConfig() {
+      // config = {'backendExperimentUrl': 'http://localhost:8080/experiments'};
       config = {'backendExperimentUrl': '/data/experiments.json'};
-      //config = {'backendExperimentUrl': 'http://localhost:8080/experiments'};
+      // config = {'backendExperimentUrl': 'http://localhost:8001/v2/experiments'};
 
       init();
     }
@@ -237,5 +238,5 @@ angular.module('garethApp')
       $http.get(rerunLink).success(function () {
         init();
       });
-    }
+    };
   });

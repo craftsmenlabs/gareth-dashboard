@@ -27,11 +27,11 @@ angular.module('garethApp')
     $scope.failure.querySearch = queryDefinitions;
 
     $scope.create = function () {
-      $scope.experiment.baseline_glueline = $scope.baseline.searchText;
-      $scope.experiment.assume_glueline = $scope.assume.searchText;
-      $scope.experiment.time_glueline = $scope.time.searchText;
-      $scope.experiment.success_glueline = $scope.success.searchText;
-      $scope.experiment.failure_glueline = $scope.failure.searchText;
+      $scope.experiment.baselineGlueLine = $scope.baseline.searchText;
+      $scope.experiment.assumeGlueLine = $scope.assume.searchText;
+      $scope.experiment.timeGlueLine = $scope.time.searchText;
+      $scope.experiment.successGlueLine = $scope.success.searchText;
+      $scope.experiment.failureGlueLine = $scope.failure.searchText;
 
       definitionsService.createExperiment($scope.experiment).then(handleSuccess, function () {
         showErrorDialog();

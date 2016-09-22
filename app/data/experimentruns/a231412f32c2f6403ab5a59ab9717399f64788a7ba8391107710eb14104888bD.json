@@ -1,13 +1,13 @@
-[ 
+[
 	{
 		"hash": null,
-		"baseline_execution": null,
-		"assume_execution": null,
-		"success_execution": null,
-		"failure_execution": null,
-		"baseline_state": "non_existent",
-		"assume_state": "non_existent",
-		"success_state": "non_existent",
-		"failure_state": "non_existent"
+		"baselineExecution": null,
+		"assumeExecution": null,
+		"successExecution": null,
+		"failureExecution": null,
+		"baselineState": "non_existent",
+		"assumeState": "non_existent",
+		"successState": "non_existent",
+		"failureState": "non_existent"
 	}
 ]
