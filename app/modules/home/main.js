@@ -73,22 +73,22 @@ angular.module('garethApp')
                         type: "line",
                         data: sums,
                         fill: false,
-                        borderColor: '#EC932F',
-                        backgroundColor: '#EC932F',
-                        pointBorderColor: '#EC932F',
-                        pointBackgroundColor: '#EC932F',
-                        pointHoverBackgroundColor: '#EC932F',
-                        pointHoverBorderColor: '#EC932F',
+                        borderColor: '#ec792f',
+                        backgroundColor: '#ec792f',
+                        pointBorderColor: '#Eec792f',
+                        pointBackgroundColor: '#ec792f',
+                        pointHoverBackgroundColor: '#ec792f',
+                        pointHoverBorderColor: '#ec792f',
                         yAxisID: 'y-axis-1'
                     }, {
                         label: "Successes",
                         data: successes,
-                        backgroundColor: 'rgba(0, 255, 0, 1)',
+                        backgroundColor: '#008000',
                         yAxisID: 'y-axis-1'
                     }, {
                         label: "Failures",
                         data: failures,
-                        backgroundColor: 'rgba(255, 0, 0, 1)',
+                        backgroundColor: '#fa2009',
                         yAxisID: 'y-axis-1'
                     }],
                 },
