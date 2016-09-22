@@ -4,63 +4,63 @@
 		<h3>Experiment Details for: {{experiment.experimentName}}</h3>
 	</div>
 
-  <table class="table">
-                  <thead>
-                  <tr>
-                    <th colspan="2"></th>
-                    <th>Execution date/time</th>
-                    <th>Execution status</th>
-                  </tr>
-                  </thead>
+	<table class="table">
+		<thead>
+		<tr>
+			<th colspan="2"></th>
+			<th>Execution date/time</th>
+			<th>Execution status</th>
+		</tr>
+		</thead>
 
-                  <tbody>
+		<tbody>
 
 
-				  <tr>
-                    <th width="10%">Value</th>
-                    <th width="50%">{{experiment.value}}
-                    </td>
-                    <th width="30%"></th>
-                    <th width="10%"></th>
-                  </tr>
-                  <tr>
-                    <th width="10%">Baseline</th>
-                    <th width="50%">{{experiment.baselineGlueLine}}
-                    </td>
-                    <th width="30%">{{experiment.baselineExecution | date:'medium'}}</th>
-                    <th width="10%"><p class="{{experiment.baselineState}}"><span
-                      class="glyphicon glyphicon-download-alt"></span></p></th>
-                  </tr>
+		<tr>
+			<th width="10%">Value</th>
+			<th width="50%">{{experiment.value}}
+			</td>
+			<th width="30%"></th>
+			<th width="10%"></th>
+		</tr>
+		<tr>
+			<th width="10%">Baseline</th>
+			<th width="50%">{{experiment.baselineGlueLine}}
+			</td>
+			<th width="30%">{{experiment.baselineExecution | date:'medium'}}</th>
+			<th width="10%"><p class="{{experiment.baselineState}}"><span
+					class="glyphicon glyphicon-download-alt"></span></p></th>
+		</tr>
 
-                  <tr>
-                    <th>Assumption</th>
-                    <td>{{experiment.assumeGlueLine}}</td>
-                    <td>{{experiment.assumeExecution | date:'medium'}}</td>
-                    <td><p class="{{experiment.assumeState}}"><span
-                      class="glyphicon glyphicon-question-sign"></span></p></td>
-                  </tr>
+		<tr>
+			<th>Assumption</th>
+			<td>{{experiment.assumeGlueLine}}</td>
+			<td>{{experiment.assumeExecution | date:'medium'}}</td>
+			<td><p class="{{experiment.assumeState}}"><span
+					class="glyphicon glyphicon-question-sign"></span></p></td>
+		</tr>
 
-                  <tr>
-                    <th>Time</th>
-                    <td colspan="3">{{experiment.timeGlueLine}}</td>
-                  </tr>
+		<tr>
+			<th>Time</th>
+			<td colspan="3">{{experiment.timeGlueLine}}</td>
+		</tr>
 
-                  <tr>
-                    <th>Success</th>
-                    <td>{{experiment.successGlueLine}}</td>
-                    <td>{{experiment.successExecution | date:'medium'}}</td>
-                    <td><p class="{{experiment.successState}}"><span
-                      class="glyphicon glyphicon-ok-sign"></span></p></td>
-                  </tr>
+		<tr>
+			<th>Success</th>
+			<td>{{experiment.successGlueLine}}</td>
+			<td>{{experiment.successExecution | date:'medium'}}</td>
+			<td><p class="{{experiment.successState}}"><span
+					class="glyphicon glyphicon-ok-sign"></span></p></td>
+		</tr>
 
-                  <tr>
-                    <th>Failure</th>
-                    <td>{{experiment.failureGlueLine}}</td>
-                    <td>{{experiment.failureExecution | date:'medium'}}</td>
-                    <td><p class="{{experiment.failureState}}"><span
-                      class="glyphicon glyphicon-exclamation-sign"></span></p></td>
-                  </tr>
+		<tr>
+			<th>Failure</th>
+			<td>{{experiment.failureGlueLine}}</td>
+			<td>{{experiment.failureExecution | date:'medium'}}</td>
+			<td><p class="{{experiment.failureState}}"><span
+					class="glyphicon glyphicon-exclamation-sign"></span></p></td>
+		</tr>
 
-                  </tbody>
-                </table>
+		</tbody>
+	</table>
 </form>

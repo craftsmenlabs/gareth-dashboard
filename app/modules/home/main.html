@@ -1,40 +1,40 @@
 <!-- BEGIN CIRCLE GRAPHS-->
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="h3">
-        <span class="glyphicon glyphicon-stats"></span>
-        Statistics
-      </div>
-    </div>
-  </div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="h3">
+				<span class="glyphicon glyphicon-stats"></span>
+				Statistics
+			</div>
+		</div>
+	</div>
 </div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-md-9 chartContainer">
+	<div class="row">
+		<div class="col-md-9 chartContainer">
 			<canvas id="bars" width="500" height="300"></canvas>
-		<div class="container">
-			<span ng-if="failedExperiments == 0">All {{allExperiments}} experiments successful.</span>
-			<span ng-if="failedExperiments != 0">{{failedExperiments}} of {{allExperiments}} experiments failed.</span>
-			<span ng-if="failureRuns == 0">All {{allRuns}} runs successful.</span>
-			<span ng-if="failureRuns != 0">{{failureRuns}} of {{allRuns}} runs failed.</span>
-	  </div>
-  </div>
+			<div class="container">
+				<span ng-if="failedExperiments == 0">All {{allExperiments}} experiments successful.</span>
+				<span ng-if="failedExperiments != 0">{{failedExperiments}} of {{allExperiments}} experiments failed.</span>
+				<span ng-if="failureRuns == 0">All {{allRuns}} runs successful.</span>
+				<span ng-if="failureRuns != 0">{{failureRuns}} of {{allRuns}} runs failed.</span>
+			</div>
+		</div>
 
-        <div class="col-md-3">
-          <h6 ng-if="failedExperiments != 0">{{allExperiments}}</h6>
-          <h6 ng-if="failedExperiments == 0">0</h6>
-          <p align="center">experiments defined.</p>
-          <h6 class="neutral" ng-if="failedExperiments != 0">{{allRuns}}</h6>
-          <h6 class="neutral" ng-if="failedExperiments == 0">0</h6>
-          <p align="center">Gareth runs completed.</p>
-          <h6 class="error" ng-if="failedExperiments != 0">{{failedExperiments}}</h6>
-          <h6 ng-if="failedExperiments == 0">0</h6>
-          <p align="center">experiments failing.</p>
-        </div>
+		<div class="col-md-3">
+			<h6 ng-if="failedExperiments != 0">{{allExperiments}}</h6>
+			<h6 ng-if="failedExperiments == 0">0</h6>
+			<p align="center">experiments defined.</p>
+			<h6 class="neutral" ng-if="failedExperiments != 0">{{allRuns}}</h6>
+			<h6 class="neutral" ng-if="failedExperiments == 0">0</h6>
+			<p align="center">Gareth runs completed.</p>
+			<h6 class="error" ng-if="failedExperiments != 0">{{failedExperiments}}</h6>
+			<h6 ng-if="failedExperiments == 0">0</h6>
+			<p align="center">experiments failing.</p>
+		</div>
 
-  </div>
+	</div>
 
 </div>
 
@@ -43,46 +43,46 @@
 
 <!-- BEGIN THE TABLE-->
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="h3">
-        <span class="glyphicon glyphicon-fire"></span>
-        Running experiments
-      </div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="h3">
+				<span class="glyphicon glyphicon-fire"></span>
+				Running experiments
+			</div>
 
-      <div class="tools">
-        <a href="javascript:;" class="collapse">
-        </a>
-      </div>
-    </div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse">
+				</a>
+			</div>
+		</div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="bg-white">
-          <div ng-app id="ng-app">
-            <div ng-repeat="experiment in experiments">
-      			  <div class="panel-heading" ng:if="experiment.assumeExecution != null">
-      				<table class="table-condensed experiments">
-      				  <thead>
-        				  <tr>
-          					<th width="10%"><a ng-click="rerun(experiment.links[1].href)"><span
-          					  class="glyphicon glyphicon-refresh"></span></a></th>
-          					<th width="80%">
-          					<a ng-click="showExperiment(experiment)" href="javascript:void(0);">
-          					<p>
-          					  {{experiment.experimentName}}</p></a></th>
-          					<th width="10%"><p class="{{experiment.assumeState}}"><span
-          					  class="glyphicon glyphicon-dashboard"></span></p></th>
-        				  </tr>
-      				  </thead>
-      				 </table>
-      			  </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="bg-white">
+					<div ng-app id="ng-app">
+						<div ng-repeat="experiment in experiments">
+							<div class="panel-heading" ng:if="experiment.assumeExecution != null">
+								<table class="table-condensed experiments">
+									<thead>
+									<tr>
+										<th width="10%"><a ng-click="rerun(experiment.links[1].href)"><span
+												class="glyphicon glyphicon-refresh"></span></a></th>
+										<th width="80%">
+											<a ng-click="showExperiment(experiment)" href="javascript:void(0);">
+												<p>
+													{{experiment.experimentName}}</p></a></th>
+										<th width="10%"><p class="{{experiment.assumeState}}"><span
+												class="glyphicon glyphicon-dashboard"></span></p></th>
+									</tr>
+									</thead>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- END THE TABLE-->
 
@@ -90,47 +90,47 @@
 
 <!-- BEGIN THE TABLE-->
 <div class="container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="h3">
-        <span class="glyphicon glyphicon-fire"></span>
-        New or Pending experiments
-      </div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="h3">
+				<span class="glyphicon glyphicon-fire"></span>
+				New or Pending experiments
+			</div>
 
-      <div class="tools">
-        <a href="javascript:;" class="collapse">
-        </a>
-      </div>
-    </div>
+			<div class="tools">
+				<a href="javascript:;" class="collapse">
+				</a>
+			</div>
+		</div>
 
-    <div class="row">
-      <div class="col-md-12">
-        <div class="bg-white">
-          <div ng-app id="ng-app">
-            <div ng-repeat="experiment in experiments">
-			  <div class="panel-heading" ng:if="experiment.assumeExecution == null">
-				<table class="table-condensed experiments">
-				  <thead>
-				  <tr>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="bg-white">
+					<div ng-app id="ng-app">
+						<div ng-repeat="experiment in experiments">
+							<div class="panel-heading" ng:if="experiment.assumeExecution == null">
+								<table class="table-condensed experiments">
+									<thead>
+									<tr>
 
-					<th width="10%"><a ng-click="rerun(experiment.links[1].href)"><h3><span
-					  class="glyphicon glyphicon-refresh"></span></h3></a></th>
-					<th width="80%">
-					<a ng-click="showExperiment(experiment)" href="javascript:void(0);">
-					<h3>
-					  {{experiment.experimentName}}</h3></a></th>
-					<th width="10%"><p class="{{experiment.assumeState}}"><span
-					  class="glyphicon glyphicon-dashboard"></span></p></th>
-				  </tr>
-				  </thead>
-				</table>
-			  </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+										<th width="10%"><a ng-click="rerun(experiment.links[1].href)"><h3><span
+												class="glyphicon glyphicon-refresh"></span></h3></a></th>
+										<th width="80%">
+											<a ng-click="showExperiment(experiment)" href="javascript:void(0);">
+												<h3>
+													{{experiment.experimentName}}</h3></a></th>
+										<th width="10%"><p class="{{experiment.assumeState}}"><span
+												class="glyphicon glyphicon-dashboard"></span></p></th>
+									</tr>
+									</thead>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- END THE TABLE-->
 

@@ -9,13 +9,13 @@
  * Main module of the application.
  */
 angular
-  .module('garethApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
-    'ngMessages',
-    'ngMaterial'
-  ]);
+    .module('garethApp', [
+        'ngAnimate',
+        'ngCookies',
+        'ngResource',
+        'ngRoute',
+        'ngSanitize',
+        'ngTouch',
+        'ngMessages',
+        'ngMaterial'
+    ]);
